@@ -1,0 +1,607 @@
+@font-face {
+    font-family: bebas-bold;
+    src: url(fonts/BebasNeueBold.otf);
+}
+
+@font-face {
+    font-family: ubuntu-regular;
+    src: url(fonts/Ubuntu-R.ttf);
+}
+
+@font-face {
+    font-family: ubuntu-bold;
+    src: url(fonts/Ubuntu-B.ttf);
+}
+/********************************GRAL***************************************/
+body{
+  width: 100% !important;
+  overflow-x: hidden;
+}
+
+.bk-gris{
+  background-color: #F5F5F6;
+}
+
+.padding-bottom{
+  padding-bottom: 3%;
+}
+
+footer{
+  padding:5%;
+ background: repeating-linear-gradient(
+  145deg,
+  #FFDD2E,
+  #FFDD2E 10px,
+  #FFCE30 10px,
+  #FFCE30 20px
+);
+}
+
+footer h4{
+  border-bottom:1px solid black;
+  margin-bottom: 12px;
+}
+
+footer p{
+  margin:0 0 4px 0;
+}
+
+.right{
+  float:right;
+}
+.btn{
+  background-color:#EB5938;
+  border-radius: 6px;
+  color:#FFF100;
+  padding:10px;
+  font-family: ubuntu-bold !important;
+  font-size:2rem;
+  box-shadow: -6px 7px #020302;
+
+}
+
+
+.btn:hover{
+  box-shadow: -3px 4px #020302;
+  color:#FFF100;
+  padding:9px;
+  background-color: #da4f2f;
+  margin: 5px 0 0 -5px;
+  transition:box-shadow 0.2s,background-color 0.2s,padding 0.2s,margin 0.2s; 
+
+}
+
+
+.btn:active{
+  background-color: #c14e34;
+   box-shadow: -0px 0px #020302;
+  margin: 8px 0 0 -8px;
+  
+
+}
+
+.btn span{
+  color:white;
+  font-family: ubuntu-regular !important;
+}
+
+
+h1,h2,h4,h5{
+font-family: bebas-bold !important;
+}
+
+nav ul li a{
+  font-family: ubuntu-bold !important;  
+  color:#1DA2DC;
+  font-size: 1.5rem
+}
+
+
+h1{
+  font-size: 7rem;
+  color:#1DA2DC;
+}
+
+h2{
+  font-size: 5rem;
+  color:#1DA2DC;
+
+}
+
+h4{
+  font-size: 2.5rem;
+  margin:5px 0 5px 0;
+}
+
+h5{
+  font-size: 2rem;
+  color:#1DA2DC;
+
+}
+
+
+p{
+  font-family: ubuntu-regular !important;
+}
+
+p>span{
+  color:#EB5938;
+}
+
+
+.preloader{
+  width:100%;
+  height: auto;
+  background-color: white;
+}
+
+
+/***********************************HEADER*************************************************/
+header{
+  position:fixed;
+  height: auto;
+  width: 100%;
+  background-color: white;
+  border-bottom-color:#1DA2DC;
+  border-bottom-width: 5px;
+  border-bottom-style:solid;
+  z-index: 4000;
+}
+
+header img{
+  width: 90%;
+  vertical-align: middle;
+}
+
+nav ul{
+  margin-top: 2%;
+  float: right;
+    padding: 0;
+    width: 732px;
+}
+
+
+nav ul li {
+ float:left;
+  list-style: none;
+  margin-left: 43px;
+   }
+
+nav ul li a h5 {
+ font-family: ubuntu-bold !important;
+ font-size: 1.5rem;
+   }
+
+
+
+
+ .menu ul li a:after {
+        content: "";
+        display: block;
+        background-color: #EB5938;
+        height: 2px;
+        width: 0%;
+        -webkit-transition: 0.2s width;
+        transition: 0.2s width;
+
+    }
+.menu ul li a:hover{
+    text-decoration: none;
+    color:#EB5938;
+    transition:color 0.5s;
+}
+
+.menu ul li a:hover:after{
+    width: 100%;
+    transition: width 0.8s;
+
+}
+.menu ul li a.active{
+  color:#EB5938;
+}
+
+.menu ul li a.active:after{
+    content: "";
+        display: block;
+        background-color: #EB5938;
+        height: 2px;
+        width: 100%;
+        -webkit-transition: 0.2s width;
+        transition: 0.2s width;
+}
+
+.margin-to-header{
+}
+
+
+.fa-bars{
+  font-size:2.8rem !important;
+}
+
+
+.logo-cont{
+  padding-left:0;
+}
+
+#xsMenu i {
+
+    margin-top: 3%;
+    
+}
+
+#xsMenu img{
+  width:40px;
+  display:inline-block;
+}
+
+
+#xsMenu{
+
+  display:none;
+    position: fixed;
+    z-index: 4000;
+        width: 70%;
+    height: 100vh;
+    float: right;
+    right: 0;
+     background-color: #1DA2DC;
+    border-left-width: 9px;
+    border-left-style: solid;
+
+    border-left-color: #EB5938;
+    overflow-y: scroll;
+    
+}
+
+#xsMenu i {
+  float: right;
+  margin-right: 10%;
+  display:inline-block;
+  color:white;
+}
+
+#xsMenu h4{
+  display:inline-block;
+  color:white;
+  font-weight: bold;
+  margin-left: 5%;
+    
+}
+
+
+
+#xsMenu h3{
+  text-align: center;
+
+}
+
+#xsMenu ul{
+  padding-left:0px;
+    width: auto;
+
+}
+
+#xsMenu li{
+   margin-left: 0;
+    margin-top: 0%;
+    list-style: none;
+    font-size: 1.0rem;
+    border-bottom-color: white;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    display: block;
+    width: 100%;
+    padding:10px;
+  
+}
+
+
+#xsMenu li a{
+  font-family: bebas-bold;
+  letter-spacing: 4px;
+   color:white;
+   font-size: 2rem;
+}
+
+#xsMenu .no-margin-top{
+  margin-top: 0% !important;
+}
+
+/************************************BANNER AND IMG-SECTION*****************************************************/
+.img-section img{
+  width: 100%;
+}
+
+
+
+
+.slider-cont .slide img{
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+/******************INDEX******************************************************/
+
+
+section#index .img-cont{
+  padding-left:0;
+}
+
+
+section#index .flex-cont{
+  background:url("../img/bk-pixel-1.jpg") repeat;
+}
+
+
+section#index .flex{
+    display:flex;
+    flex-direction:row; 
+    justify-content: space-around;
+    align-content:stretch;
+	 flex-wrap: wrap;
+	 align-content: flex-start;    
+	 align-items: center;
+   color:white;
+   padding-left: 0;
+}
+
+section#index .flex li{
+  cursor:pointer;
+    text-align: center;
+    list-style: none;
+      margin:5% 0 5% 0; 
+      line-height: 25px;
+
+}
+
+section#index .flex li h4 {
+    margin: 12px 0 5px 0;
+    letter-spacing: 1px;
+}
+
+section#index .flex li:hover .overlap{
+  background-color: rgba(0,0,0,0.5);
+  transition:background-color 0.5s;
+}
+
+
+section#index .flex li:hover .overlap .btn{
+   opacity: 1;
+   transition:opacity 0.5s 0.2s;
+}
+
+
+section#index .flex li img{
+	width: 78px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+section#index .flex li .overlap{
+  height: auto;
+  padding:8px;
+  width:100%;
+  background-color: rgba(0,0,0,0.0);
+}
+
+section#index .flex li .overlap .btn{
+      margin-top: -100px;
+    background-color: #1DA2DC;
+    box-shadow: -4px 3px #FCEE1B;
+    color: white;
+    font-size: 1.7rem;
+    padding: 5px;
+    opacity: 0;
+  }
+
+
+
+section#index .flex li .overlap .btn:hover{
+  box-shadow: -1px 2px #020302 !important;
+  color:#FFF100;
+  padding:2.5px;
+  background-color: #1a91c5;
+  margin: -95px 0 0 -5px;
+
+  transition:box-shadow 0.2s,background-color 0.2s,padding 0.2s,margin 0.2s; 
+
+}
+
+
+section#index .metodos-list {
+  list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+section#index .metodos-list  li{
+  float:left;
+}
+
+section#index .metodos-list  li:not(:first-child){
+  margin-left: 20px
+}
+
+
+section#index .metodos-list  li img{
+  width:100px;
+}
+
+
+section#index .metodos-title {
+    border-bottom: 1px solid black;
+    margin-bottom: 22px;
+    padding-bottom: 11px;
+}
+
+section#index .metodos-list li .img-width{
+  width: 60px;
+}
+
+section#index .metodos-pago{
+  margin-top: 5px;
+  padding: 40px 0 69px 0px;
+  margin-bottom: 15px;
+}
+
+/*********************************PREGUNTAS FRECUENTES *************************************************/
+
+
+
+section#preguntas-frecuentes .container .row{
+  padding-top:4%;
+}
+
+/*section#preguntas-frecuentes .container .row:first-child {
+  padding-bottom: 5%;
+  
+}*/
+
+
+
+/*********************************QUIERO PAGAR ***************************************************************/
+
+
+section#quiero-pagar form {
+  margin-top: 4%;
+  padding-bottom: 5%;
+}
+
+
+
+section#quiero-pagar form input{
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  border-bottom-color:#1DA2DC;
+  text-align: center;
+  width:30%;
+}
+
+
+section#quiero-pagar button{
+
+}
+
+
+/***************************CONTACTO *************************************************************************/
+
+label{
+  font-family:ubuntu-regular !important;
+  margin-top: 2%;
+  font-weight: 1;
+}
+
+section#contacto{
+  padding-bottom: 5%;
+}
+
+section#contacto p img{
+  vertical-align: unset;
+}
+
+section#contacto .btn:hover{
+  margin: 5px 5px 0 0px;
+  transition:box-shadow 0.2s,background-color 0.2s,padding 0.2s,margin 0.2s; 
+
+}
+
+
+section#contacto .btn:active{
+  margin: 8px 8px 0 0px;
+  
+
+}
+
+.btn-cont{
+  margin-top: 2%;
+  float:right;
+}
+
+
+section#contacto .img-cont img{
+  margin-top: 5%;
+}
+
+
+
+
+/**************************************MEDIA QUERYS**************************************************************/
+@media only screen and (min-width: 10px) and (max-width: 769px) {
+
+section{
+  text-align: center;
+}
+section#index  .prin-cont{
+  padding-bottom: 20px;
+
+}
+
+section#index .metodos-list li{
+  display:inline-block;
+}
+
+section#index .metodos-list li .img-width {
+    width: 46px;
+}
+
+section#index .metodos-list li img {
+    width: 83px;
+}
+
+
+}
+
+
+
+@media only screen and (min-width: 10px) and (max-width: 414px) {
+
+
+}
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 768px) and (orientation:portrait) {
+
+
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 850px) and (orientation:landscape) {
+ section#index  .prin-cont{
+  text-align: center;
+  padding-bottom: 20px;
+
+}
+  
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+  nav ul li {
+    margin-left: 4%;
+ }
+
+
+}
+
+
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+
+	
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1920px) {
+
+	
+}
+
+

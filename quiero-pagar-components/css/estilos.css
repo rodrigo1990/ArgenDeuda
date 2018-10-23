@@ -1,0 +1,172 @@
+	 	@font-face {
+    font-family: bebas-bold;
+    src: url(../../css/fonts/BebasNeueBold.otf);
+	}
+
+	@font-face {
+	    font-family: ubuntu-regular;
+	    src: url(../../css/fonts/Ubuntu-R.ttf);
+	}
+
+	@font-face {
+	    font-family: ubuntu-bold;
+	    src: url(../../css/fonts/Ubuntu-B.ttf);
+	}
+
+
+h1,h2,h4,h5{
+font-family: bebas-bold !important;
+letter-spacing: 2px;
+}
+
+h1{
+  font-size: 7rem;
+  color:#1DA2DC;
+}
+
+h2{
+  font-size: 4.5rem;
+  color:#1DA2DC;
+
+}
+
+h4{
+  font-size: 2.5rem;
+  margin:5px 0 5px 0;
+}
+
+h5{
+  font-size: 2rem;
+  color:#1DA2DC;
+
+}
+
+p{
+  font-family: ubuntu-regular !important;
+}
+
+
+p>span{
+  color:#EB5938;
+}
+
+
+	 	form {
+		  margin-top: 4%;
+		  padding-bottom: 5%;
+		  text-align:center;
+		}
+
+
+
+		 form input{
+		  border-top:none;
+		  border-left:none;
+		  border-right:none;
+		  border-bottom-color:#1DA2DC;
+		  text-align: center;
+		  width:30%;
+		}
+
+		h4{
+			color:#1DA2DC;
+		}
+
+		/*PRELOADER*/
+		/* Preloader */
+
+		#preloader h3{
+			text-align: center;
+		    margin-top: 3%;
+		    color: #1DA2DC;
+		    font-weight: bold;
+		    font-family: ubuntu-regular;
+		}
+
+		#preloader {
+		        position: fixed;
+		    top: 0;
+		    left: 0;
+		    right: 0;
+		    bottom: 0;
+		    background-color: white;
+		    z-index: 10043;
+		    height: 100vh;
+		}
+
+		#status {
+		     position: relative;
+		    /* left: 50%; */
+		    /* top: 50%; */
+		    display: block;
+		    margin-left: auto;
+		    margin-right: auto;
+		    margin-top: 2%;
+		}
+
+		.spinner-sm {
+            border: 5px solid #ec5125;
+    		border-top: 5px solid #1da2dc;
+		    border-radius: 50%;
+		    width: 60px;
+		    height: 60px;
+		    animation: spin 0.80s linear infinite;
+		}
+	
+		
+		@keyframes spin {
+		    0% { transform: rotate(0deg); }
+		    100% { transform: rotate(360deg); }
+		}
+
+.btn{
+  background-color:#EB5938;
+  border-radius: 6px;
+  color:#FFF100;
+  padding:10px;
+  font-family: ubuntu-bold !important;
+  font-size:2rem;
+  box-shadow: -6px 7px #020302;
+
+}
+
+
+.btn:hover{
+  box-shadow: -3px 4px #020302;
+  color:#FFF100;
+  padding:9px;
+  background-color: #da4f2f;
+  margin: 5px 0 0 -5px;
+  transition:box-shadow 0.2s,background-color 0.2s,padding 0.2s,margin 0.2s; 
+
+}
+
+
+.btn:active{
+  background-color: #c14e34;
+   box-shadow: -0px 0px #020302;
+  margin: 8px 0 0 -8px;
+  
+
+}
+
+.table{
+	 border-radius: 5px;
+    width: 50%;
+    margin: 0px auto;
+    float: none;
+}
+
+.table thead{
+	border-bottom-color: #1da2dc;
+    border-bottom-style: solid;
+}
+
+.table thead th{
+	color:#1da2dc;
+}
+
+
+.padding-top{
+	padding-top: 38px;
+}
