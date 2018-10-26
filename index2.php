@@ -18,7 +18,7 @@ require_once("Clases/Usuario.php");
 $api = new Api();
 $usuario  = new Usuario();
 $usuario->setSoapClient($api->soapClient);
-$usuario->crearUsuarioPorDocumento('27021800',$api->getTicket());
+$usuario->crearUsuarioPorDocumento('4571760',$api->getTicket());
 
 
 

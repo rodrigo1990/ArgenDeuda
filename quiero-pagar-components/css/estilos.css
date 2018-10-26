@@ -170,3 +170,29 @@ p>span{
 .padding-top{
 	padding-top: 38px;
 }
+
+
+.red-bk{
+	background:rgba(255, 0, 0, 0.1);
+}
+
+.green-bk{
+	background:rgba(0, 255, 67, 0.1);
+}
+
+.red{
+	color:red;
+}
+
+
+.green{
+	color:green;
+}
+
+.volver{
+	cursor:pointer;
+}
+
+.volver:hover{
+	text-decoration: none;
+}

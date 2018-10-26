@@ -1,11 +1,14 @@
 <?php 
+if(isset($_POST['documento'])){
+	session_start();
+}else{
+	header("Location:quiero-pagar-form.php");
+}
 error_reporting(0);
 require_once("../Clases/Api.php");
 require_once("../Clases/Usuario.php");
 $api = new Api();
 $usuario  = new Usuario();
-$usuario->setSoapClient($api->soapClient);
-$usuario->crearUsuarioPorDocumento($_POST['documento'],$api->getTicket());
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +19,17 @@ $usuario->crearUsuarioPorDocumento($_POST['documento'],$api->getTicket());
 	<link rel="stylesheet" href="css/estilos.css">
 </head>
 <body class="text-center padding-top">
-	
+
+	<?php 
+		try{
+	 ?>
+
+	<?php 
+		$usuario->setSoapClient($api->soapClient);
+		$usuario->crearUsuarioPorDocumento($_POST['documento'],$api->getTicket());
+	 ?>
+
+
 	<?php if($usuario->documento!=0 ): ?>
 
 		<h4><?php echo $usuario->nombre;?></h4>
@@ -37,17 +50,58 @@ $usuario->crearUsuarioPorDocumento($_POST['documento'],$api->getTicket());
 				<th class="text-center">Saldo</th>
 			</thead>
 			<tbody>
+
+
 				<?php foreach($usuario->obtenerProductosPorDocumento() as $producto):?>
-					<tr>
+			
+					<!-- setear clases de table row -->
+					<?php if($producto->estado=="Atrasada"): ?>
+							<?php $rowClass="red-bk" ?>
+					<?php else: ?>
+							<?php $rowClass="green-bk" ?>
+					<?php endif; ?>
+					<!-- fin setear clases de table row -->
+
+
+					<!-- table row -->
+					<tr class="<?php echo $rowClass ?>">
+
 						<td><?php echo $producto->nombre; ?></td>
+
 						<td><?php echo $producto->fechaMora; ?></td>
-						<td><?php echo $producto->estado ?></td>
+
+						<td>
+
+							<?php if($producto->estado=="Atrasada"): ?>
+
+								  <b class="red"><?php echo $producto->estado ?></b>
+
+							<?php  else:?>
+
+								   <b class="green"><?php echo $producto->estado ?></b>
+
+						  	<?php 	endif;?>
+								
+						</td>
+
 						<td><?php echo $producto->cuotasAdeudadas; ?></td>
+
 						<td><?php echo "$ ".$producto->saldo." ARS"; ?></td>
+
 					</tr>
+					<!-- fin table row -->
+
+
 				<?php endforeach;?>
+
 			</tbody>
 		</table>
+		<br><br><br>
+		<a href="quiero-pagar-form.php" class="volver text-center center-block">
+			<h5>VOLVER</h5>
+			<img src="img/back-arrow.png" alt="" class="" style="width:60px">
+		</a>
+		
 
 
 
@@ -60,6 +114,17 @@ $usuario->crearUsuarioPorDocumento($_POST['documento'],$api->getTicket());
 
 
 		endif;?>
+
+
+		<?php 
+		}//end try
+		catch(Exception $e) {
+		?>
+		<h1>¡Ups! Ha ocurrido un error, intente nuevamente.</h1>
+
+		<?php
+			}//endCatch
+		 ?>
 	 
 
 

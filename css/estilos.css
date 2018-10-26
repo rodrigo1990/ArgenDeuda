@@ -531,8 +531,60 @@ section#contacto .img-cont img{
   margin-top: 5%;
 }
 
+/*****************************************SLIDER****************************************************************************/
+.owl-carousel .owl-stage-outer{
+  z-index: -1 !important;
+}
+
+.owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: -39px !important;
+}
+
+.owl-theme .owl-dots .owl-dot span{
+      background: #fdf100 !important;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
+      background: #eb5938 !important;
+}
+.owl-theme .owl-dots .owl-dot{
+  outline:none;
+}
 
 
+
+
+   /* jssor slider loading skin double-tail-spin css */
+
+        .jssorl-004-double-tail-spin img {
+            animation-name: jssorl-004-double-tail-spin;
+            animation-duration: 1.2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes jssorl-004-double-tail-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .jssorb051 .i {position:absolute;cursor:pointer;}
+        .jssorb051 .i .b {fill:#fff;fill-opacity:0.5;stroke:#000;stroke-width:400;stroke-miterlimit:10;stroke-opacity:0.5;}
+        .jssorb051 .i:hover .b {fill-opacity:.7;}
+        .jssorb051 .iav .b {fill-opacity: 1;}
+        .jssorb051 .i.idn {opacity:.3;}
+
+        .jssora051 {display:block;position:absolute;cursor:pointer;}
+        .jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+        .jssora051:hover {opacity:.8;}
+        .jssora051.jssora051dn {opacity:.5;}
+        .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
 
 /**************************************MEDIA QUERYS**************************************************************/
 @media only screen and (min-width: 10px) and (max-width: 769px) {
