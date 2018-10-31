@@ -1,10 +1,11 @@
+<?php error_reporting(0) ?>
 <?php 
 if(isset($_POST['documento'])){
 	session_start();
 }else{
 	header("Location:quiero-pagar-form.php");
 }
-error_reporting(0);
+//error_reporting(0);
 require_once("../Clases/Api.php");
 require_once("../Clases/Usuario.php");
 $api = new Api();
@@ -43,6 +44,7 @@ $usuario  = new Usuario();
 
 		<table class="table text-center">
 			<thead>
+				<th class="text-center">Nro. de Credito</th>
 				<th class="text-center">Nombre</th>
 				<th class="text-center">Fecha Primer Vto Pago</th>
 				<th class="text-center">Estado</th>
@@ -65,6 +67,7 @@ $usuario  = new Usuario();
 
 					<!-- table row -->
 					<tr class="<?php echo $rowClass ?>">
+						<td><?php echo $producto->numero; ?></td>
 
 						<td><?php echo $producto->nombre; ?></td>
 
@@ -108,12 +111,17 @@ $usuario  = new Usuario();
 
 
 	 
-<?php 	else:
+<?php 	else: ?>
+			<div class="text-center">
+				<h4>Usuario no encontrado</h4>
+				<a href="quiero-pagar-form.php" class="volver text-center center-block">
+					<h5>VOLVER</h5>
+					<img src="img/back-arrow.png" alt="" class="" style="width:60px">
+				</a>
+			</div>
 
-			echo "Usuario no encontrado";
 
-
-		endif;?>
+<?php		endif;?>
 
 
 		<?php 

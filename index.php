@@ -8,8 +8,7 @@
 	
 	
 		<div class="row  margin-to-header">
-			<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
-        <!-- Loading Screen -->
+			<!-- <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
         <div data-u="loading" class="jssorl-004-double-tail-spin" style="position:absolute;top:0px;left:0px;text-align:center;background-color:rgba(0,0,0,0.7);">
             <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/double-tail-spin.svg" />
         </div>
@@ -37,7 +36,6 @@
                 <img data-u="caption" data-t="14" style="position:absolute;top:396px;left:230px;width:478px;height:364px;max-width:478px;" src="img/argenpesos_2018_deuda_web-17.png" />
             </div>
         </div>
-        <!-- Bullet Navigator -->
         <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
             <div data-u="prototype" class="i" style="width:16px;height:16px;">
                 <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
@@ -45,7 +43,6 @@
                 </svg>
             </div>
         </div>
-        <!-- Arrow Navigator -->
         <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
             <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
                 <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
@@ -56,8 +53,8 @@
                 <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
             </svg>
         </div>
-    </div>
-			<!--  <div class="owl-one owl-carousel owl-theme">
+    </div> -->
+			 <div class="owl-one owl-carousel owl-theme">
 				<div>
 					<div class="slide">
 						<a href="quiero-pagar.php">
@@ -79,7 +76,7 @@
 						</a>
 					</div>
 				</div>
-			</div>-->
+			</div>
 		</div>
 
 	

@@ -43,6 +43,7 @@ require_once("Producto.php");
 
 					array_push($this->productos,
 						new Producto(
+						$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Numero,
 						$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Nombre,
 						$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Moneda,
 						$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Saldo,
@@ -57,7 +58,16 @@ require_once("Producto.php");
 				//Sino va a iterar en cada objeto Producto del Array Productos proveniente del web service
 				}else{
 					foreach($this->datos->ConsultaPorDocumentoResult->Productos->Producto as $productoService){
-						array_push($this->productos,new Producto($productoService->Nombre,$productoService->Moneda,$productoService->Saldo,date("Y-m-d",strtotime($productoService->FechaMora)),$productoService->CuotasAdeudadas,$productoService->Status));
+						array_push(
+							$this->productos,
+							new Producto(
+								$productoService->Numero,
+								$productoService->Nombre,
+								$productoService->Moneda,
+								$productoService->Saldo,
+								date("Y-m-d",strtotime($productoService->FechaMora)),
+								$productoService->CuotasAdeudadas,
+								$productoService->Status));
 					}
 
 					return $this->productos;

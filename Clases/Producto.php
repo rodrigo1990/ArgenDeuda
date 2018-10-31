@@ -1,6 +1,7 @@
 <?php 
 class Producto{
 
+	public $numero;
 	public $nombre;
 	public $moneda;
 	public $saldo;
@@ -10,8 +11,9 @@ class Producto{
 
 
 
-	function __construct($nombre,$moneda,$saldo,$fechaMora,$cuotasAdeudadas,$estado){
+	function __construct($numero,$nombre,$moneda,$saldo,$fechaMora,$cuotasAdeudadas,$estado){
 
+		$this->numero=$numero;
 		$this->nombre=$nombre;
 		$this->moneda=$moneda;
 		$this->saldo=number_format((float)$saldo,2,'.','');
