@@ -1,15 +1,35 @@
-<?php error_reporting(0) ?>
-<?php 
-if(isset($_POST['documento'])){
-	session_start();
-}else{
-	header("Location:quiero-pagar-form.php");
-}
-//error_reporting(0);
+<?php
 require_once("../Clases/Api.php");
 require_once("../Clases/Usuario.php");
+session_start();
+
 $api = new Api();
+
 $usuario  = new Usuario();
+
+
+if(isset($_POST['documento'])){	
+
+	$usuario->setSoapClient($api->soapClient);
+
+	$usuario->crearUsuarioPorDocumento($_POST['documento'],$api->getTicket());
+
+	$_SESSION['usuario'] = serialize($usuario);
+
+}else{
+
+	if(isset($_SESSION['usuario'])){
+
+		$usuario = unserialize($_SESSION['usuario']);
+
+	}else{
+
+		header("Location:quiero-pagar-form.php");
+
+	}
+}
+//error_reporting(0);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,10 +45,7 @@ $usuario  = new Usuario();
 		try{
 	 ?>
 
-	<?php 
-		$usuario->setSoapClient($api->soapClient);
-		$usuario->crearUsuarioPorDocumento($_POST['documento'],$api->getTicket());
-	 ?>
+	
 
 
 	<?php if($usuario->documento!=0 ): ?>
@@ -50,6 +67,7 @@ $usuario  = new Usuario();
 				<th class="text-center">Estado</th>
 				<th class="text-center">Cuotas Adeudadas</th>
 				<th class="text-center">Saldo</th>
+				<th class="text-center">Pagar</th>
 			</thead>
 			<tbody>
 
@@ -89,7 +107,8 @@ $usuario  = new Usuario();
 
 						<td><?php echo $producto->cuotasAdeudadas; ?></td>
 
-						<td><?php echo "$ ".$producto->saldo." ARS"; ?></td>
+						<td><?php echo "$ ".$producto->saldo.""; ?></td>
+						<td><a href="Pagar.php?monto=<?php echo $producto->saldo ?>">PAGAR</a></td>
 
 					</tr>
 					<!-- fin table row -->

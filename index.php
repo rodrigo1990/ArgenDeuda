@@ -90,7 +90,7 @@
 
 <div class="container text-center ">
 		<div class="row">
-			<iframe src="quiero-pagar-components/quiero-pagar-form.php" frameborder="0" style="width:100%;height: 452px;overflow: hidden;"></iframe>
+			<iframe src="quiero-pagar-components/quiero-pagar-form.php" id="iFrame" frameborder="0" style="width:100%;height: 452px;overflow: hidden;"></iframe>
 		</div>
 </div>
 
@@ -217,9 +217,9 @@
 <script type="text/javascript" src="OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
 <script type="text/javascript" src="js/slider.js"></script>
 
-<script src="js/jssor.slider-27.5.0.min.js" type="text/javascript"></script>
-<script src="js/jssor_1_slider_init.js" type="text/javascript"></script>
-<script type="text/javascript">jssor_1_slider_init();</script>
+<!--  <script src="js/jssor.slider-27.5.0.min.js" type="text/javascript"></script>-->
+<!-- <script src="js/jssor_1_slider_init.js" type="text/javascript"></script>
+<script type="text/javascript">//jssor_1_slider_init();</script> -->
    
 
 </body>

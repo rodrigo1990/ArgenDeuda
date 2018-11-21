@@ -150,9 +150,37 @@ p>span{
 
 }
 
+
+.btn-second{
+    /* background-color: #3892eb; */
+    /* border-radius: 6px; */
+    color: #3892eb;
+    padding: 10px;
+    font-family: ubuntu-bold !important;
+    font-size: 2rem;
+    border: 2px solid #3892eb;
+    /* box-shadow: -6px 7px #020302; */
+}
+
+
+.btn-second:hover{
+  background-color: #3180ce;
+  color:white;
+  transition:background-color 0.2s,color 0.2s; 
+
+}
+
+
+.validarCBU .btn,.validarCBU .btn-second{
+	width:25%;
+}
+
+
+
+
 .table{
 	 border-radius: 5px;
-    width: 50%;
+    width: 80%;
     margin: 0px auto;
     float: none;
 }
