@@ -14,6 +14,8 @@ if(isset($_POST['documento'])){
 
 	$usuario->crearUsuarioPorDocumento($_POST['documento'],$api->getTicket());
 
+	var_dump($usuario);
+
 	$_SESSION['usuario'] = serialize($usuario);
 
 }else{
@@ -73,42 +75,103 @@ if(isset($_POST['documento'])){
 
 
 				<?php foreach($usuario->obtenerProductosPorDocumento() as $producto):?>
+					
+					<?php echo $producto->estado ?>
+
+
+					<?php 
+					if($producto->estado=="Previsionada"):
+
+						$producto->estado="Atrasada";
+
+					endif;
+
+					 ?>
 			
 					<!-- setear clases de table row -->
 					<?php if($producto->estado=="Atrasada"): ?>
+
 							<?php $rowClass="red-bk" ?>
-					<?php else: ?>
+
+							<?php $color="red" ?>
+
+							<?php $paga=1; ?>
+
+					<?php elseif($producto->estado=="Al dia"): ?>
+
 							<?php $rowClass="green-bk" ?>
+
+							<?php $color="green" ?>
+
+							<?php $paga=0; ?>
+
+					<?php elseif($producto->estado=="En estudio"): ?>
+
+							<?php $rowClass="yellow-bk" ?>
+
+							<?php $color="yellow" ?>
+
+							<?php $paga=1; ?>
+
+					<?php elseif($producto->estado=="Cancelada"): ?>
+
+							<?php $rowClass="yellow-bk" ?>
+
+							<?php $color="grey" ?>
+
+							<?php $paga=0; ?>
+
 					<?php endif; ?>
 					<!-- fin setear clases de table row -->
 
 
 					<!-- table row -->
 					<tr class="<?php echo $rowClass ?>">
+
+
+
 						<td><?php echo $producto->numero; ?></td>
+
+
+
 
 						<td><?php echo $producto->nombre; ?></td>
 
+
+
+
 						<td><?php echo $producto->fechaMora; ?></td>
 
+
+
 						<td>
-
-							<?php if($producto->estado=="Atrasada"): ?>
-
-								  <b class="red"><?php echo $producto->estado ?></b>
-
-							<?php  else:?>
-
-								   <b class="green"><?php echo $producto->estado ?></b>
-
-						  	<?php 	endif;?>
+						  	<b class=<?php echo $color ?>><?php echo $producto->estado ?></b>
 								
 						</td>
 
+
+
+
 						<td><?php echo $producto->cuotasAdeudadas; ?></td>
 
+
+
+
 						<td><?php echo "$ ".$producto->saldo.""; ?></td>
-						<td><a href="Pagar.php?monto=<?php echo $producto->saldo ?>">PAGAR</a></td>
+
+
+
+
+						<?php if($paga==1): ?>
+
+							  <td><a href="Pagar.php?monto=<?php echo $producto->saldo ?>">PAGAR</a></td>
+
+						<?php else: ?>
+
+							   <td class="grey">PAGAR</td>
+
+					  	<?php endif;?>
+						
 
 					</tr>
 					<!-- fin table row -->
@@ -152,60 +215,6 @@ if(isset($_POST['documento'])){
 		<?php
 			}//endCatch
 		 ?>
-	 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<?php 
-	/*foreach($usuario->obtenerProductosPorDocumento() as $producto){
-
-		echo $producto->nombre;
-		echo "<br>";
-		echo $producto->moneda;
-		echo "<br>";
-
-	}
-
-	echo $usuario->documento;
-		echo "<br>";
-		echo $usuario->nombre;
-		echo "<br>";
-		echo $usuario->cantidadProductos;
-		echo "<br>";
-		echo $usuario->saldoTotal;
-
-
-	*/
-
-
-
-	 ?>
-
-	
 
 </body>
 </html>

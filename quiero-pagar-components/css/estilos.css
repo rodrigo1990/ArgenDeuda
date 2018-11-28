@@ -217,10 +217,40 @@ p>span{
 	color:green;
 }
 
+.grey{
+	color:grey;
+}
+
+.yellow{
+	color:yellow;
+}
+
 .volver{
 	cursor:pointer;
 }
 
 .volver:hover{
 	text-decoration: none;
+}
+
+
+.llamar-icon{
+    margin-top: 24px;
+    cursor:pointer;
+
+}
+
+
+#click2call a:hover {
+    opacity: 0.5;
+}
+#click2call_callbtn img {
+    height: 150px;
+}
+#click2call_hupbtn img {
+    height: 150px;
+}
+#click2call_msgdiv {
+    font-size: 15px;
+    font-weight: bold;
 }

@@ -365,10 +365,10 @@ section#index .flex li h4 {
     letter-spacing: 1px;
 }
 
-section#index .flex li:hover .overlap{
+/*section#index .flex li:hover .overlap{
   background-color: rgba(0,0,0,0.5);
   transition:background-color 0.5s;
-}
+}*/
 
 
 section#index .flex li:hover .overlap .btn{
@@ -399,6 +399,7 @@ section#index .flex li .overlap .btn{
     font-size: 1.7rem;
     padding: 5px;
     opacity: 0;
+    display:none;
   }
 
 

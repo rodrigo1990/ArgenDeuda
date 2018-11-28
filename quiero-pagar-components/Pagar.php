@@ -33,23 +33,58 @@ if(isset($_SESSION['usuario'])){
 	<h4><?php echo $usuario->nombre?></h4>
 
 		<h2>GESTIONE SUS CUENTAS</h2>
-		<h4>1.Ingrese email y celular</h4>
-	<form action="ValidarCBU.php" method="POST">
-		<label for="email">Ingrese su email</label>
-		<br>
-		<input type="text" name="email" id="email" placeholder="Ej:ejemplo@argenpesos.com.ar">
-		<br><br>
-		<label for="celular">Ingrese su celular</label>
-		<br>
-		<input type="text" name="celular" id="celular" placeholder="Ej:1120256315">
-
-		<br><br>
-
-		<button class="btn" id="enviar" >Ingresar</button>
+		<h4>1.Comuniquese con el departamento de cobranzas</h4>
+		<a  id="click2call_callbtn">
+			<img src="img/llamar-icon-01.png" class="llamar-icon" alt="Llamar al departamento de cobranzas">
+		</a>
+		<a id="click2call_hupbtn">
+		<img  src="img/colgar-icon-01.png" class="llamar-icon" alt="Llamar al departamento de cobranzas">
+		</a>
 		
-	</form>
+		<a href="Consultar-Deuda.php" class="volver text-center center-block">
+			<h5>VOLVER</h5>
+			<img src="img/back-arrow.png" alt="" class="" style="width:60px">
+		</a>
 
 
+
+		<div id="click2call_msgdiv"></div>
+		<div style="visibility: hidden; display: none;">
+
+		<input id="click2call_user" value="987">
+
+		<input id="click2call_domain" value="argen.grancentral.com.ar">
+
+		<input id="click2call_password" value="9d7@a48c">
+
+		<input id="click2call_number" value="203">
+
+		<input id="click2call_host" value="wss://webrtc.anura.com.ar:9084">
+		</div>
+		<div id="media" style="visibility: hidden; display: none;">
+		<video width=800 id="webcam" autoplay="autoplay" hidden="true"></video>
+		</div>
+		</div>
+
+
+
+
+		
+		<script type="text/javascript"
+		    src="https://webrtc.anura.com.ar/click2call/js/jquery-2.1.1.min.js">
+		</script>
+		<script type="text/javascript"
+		    src="https://webrtc.anura.com.ar/click2call/js/jquery.json-2.4.min.js">
+		</script>
+		<script type="text/javascript"
+		    src="https://webrtc.anura.com.ar/click2call/js/jquery.cookie.js">
+		</script>
+		<script type="text/javascript"
+		    src="js/verto-min.js">
+		</script>
+		<script type="text/javascript"
+		    src="js/click2call.js">
+		</script>
 
 
 		

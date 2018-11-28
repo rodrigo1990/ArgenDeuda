@@ -27,11 +27,12 @@ require_once("Producto.php");
 			$this->parametros["ticket"]=$ticket;
 			$this->datos=$this->soapClient->ConsultaPorDocumento($this->parametros);
 
-
-			$this->documento = $this->datos->ConsultaPorDocumentoResult->Documento;
-			$this->nombre = $this->datos->ConsultaPorDocumentoResult->Nombre;
-			$this->cantidadProductos = $this->datos->ConsultaPorDocumentoResult->CantidadProductos;
-			$this->saldoTotal = $this->datos->ConsultaPorDocumentoResult->SaldoTotal;
+			if(isset($this->datos->ConsultaPorDocumentoResult->Documento)){
+				$this->documento = $this->datos->ConsultaPorDocumentoResult->Documento;
+				$this->nombre = $this->datos->ConsultaPorDocumentoResult->Nombre;
+				$this->cantidadProductos = $this->datos->ConsultaPorDocumentoResult->CantidadProductos;
+				$this->saldoTotal = $this->datos->ConsultaPorDocumentoResult->SaldoTotal;
+			}
 		}//function
 
 
