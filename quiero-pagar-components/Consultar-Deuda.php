@@ -14,7 +14,7 @@ if(isset($_POST['documento'])){
 
 	$usuario->crearUsuarioPorDocumento($_POST['documento'],$api->getTicket());
 
-	var_dump($usuario);
+	//var_dump($usuario);
 
 	$_SESSION['usuario'] = serialize($usuario);
 
@@ -76,18 +76,6 @@ if(isset($_POST['documento'])){
 
 				<?php foreach($usuario->obtenerProductosPorDocumento() as $producto):?>
 					
-					<?php echo $producto->estado ?>
-
-
-					<?php 
-					if($producto->estado=="Previsionada"):
-
-						$producto->estado="Atrasada";
-
-					endif;
-
-					 ?>
-			
 					<!-- setear clases de table row -->
 					<?php if($producto->estado=="Atrasada"): ?>
 
@@ -120,6 +108,15 @@ if(isset($_POST['documento'])){
 							<?php $color="grey" ?>
 
 							<?php $paga=0; ?>
+					
+
+					<?php elseif($producto->estado=="Previsionada"): ?>
+
+						<?php $rowClass="red-bk" ?>
+
+						<?php $color="red" ?>
+
+						<?php $paga=1; ?>
 
 					<?php endif; ?>
 					<!-- fin setear clases de table row -->

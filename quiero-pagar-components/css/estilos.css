@@ -208,6 +208,9 @@ p>span{
 	background:rgba(0, 255, 67, 0.1);
 }
 
+.yellow-bk{
+	background:rgba(255, 255, 0, 0.1);
+}
 .red{
 	color:red;
 }
@@ -222,7 +225,7 @@ p>span{
 }
 
 .yellow{
-	color:yellow;
+	color:#a7a708;
 }
 
 .volver{

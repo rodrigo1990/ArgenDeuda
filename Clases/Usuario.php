@@ -50,7 +50,8 @@ require_once("Producto.php");
 						$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Saldo,
 						date("Y-m-d",strtotime($this->datos->ConsultaPorDocumentoResult->Productos->Producto->FechaMora)),
 						$this->datos->ConsultaPorDocumentoResult->Productos->Producto->CuotasAdeudadas,
-						$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Status
+						$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Status,
+						$this->datos->ConsultaPorDocumentoResult->Productos->Producto->EstudioAsignado
 
 					));
 
@@ -68,7 +69,8 @@ require_once("Producto.php");
 								$productoService->Saldo,
 								date("Y-m-d",strtotime($productoService->FechaMora)),
 								$productoService->CuotasAdeudadas,
-								$productoService->Status));
+								$productoService->Status,
+								$productoService->EstudioAsignado));
 					}
 
 					return $this->productos;

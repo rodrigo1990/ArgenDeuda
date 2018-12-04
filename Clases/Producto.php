@@ -8,10 +8,22 @@ class Producto{
 	public $fechaMora;
 	public $cuotasAdeudadas;
 	public $estado;
+	public $estudioAsignado;
 
 
 
-	function __construct($numero,$nombre,$moneda,$saldo,$fechaMora,$cuotasAdeudadas,$estado){
+	function __construct($numero,$nombre,$moneda,$saldo,$fechaMora,$cuotasAdeudadas,$estado,$estudioAsignado){
+
+
+		if($estado=="Previsionada" && $estudioAsignado==null){
+
+			$estado="Atrasada";
+
+		}elseif($estado=="Previsionada" && $estudioAsignado!=null){
+
+			$estado="En estudio";
+
+		}
 
 		$this->numero=$numero;
 		$this->nombre=$nombre;
@@ -20,6 +32,7 @@ class Producto{
 		$this->fechaMora=$fechaMora;
 		$this->cuotasAdeudadas=$cuotasAdeudadas;
 		$this->estado=$estado;
+		$this->estudioAsignado=$estudioAsignado;
 
 
 	}
