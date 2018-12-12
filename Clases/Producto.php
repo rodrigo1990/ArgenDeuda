@@ -8,18 +8,21 @@ class Producto{
 	public $fechaMora;
 	public $cuotasAdeudadas;
 	public $estado;
-	public $estudioAsignado;
+	public $idEstudioAsignado;
+	public $nombreEstudioAsignado;
+	public $telefonoEstudioAsignado;
 
 
 
-	function __construct($numero,$nombre,$moneda,$saldo,$fechaMora,$cuotasAdeudadas,$estado,$estudioAsignado){
+
+	function __construct($numero,$nombre,$moneda,$saldo,$fechaMora,$cuotasAdeudadas,$estado,$idEstudioAsignado){
 
 
-		if($estado=="Previsionada" && $estudioAsignado==null){
+		if($estado=="Previsionada" && $idEstudioAsignado==0){
 
 			$estado="Atrasada";
 
-		}elseif($estado=="Previsionada" && $estudioAsignado!=null){
+		}elseif($estado=="Previsionada" && $idEstudioAsignado!=0){
 
 			$estado="En estudio";
 
@@ -32,9 +35,104 @@ class Producto{
 		$this->fechaMora=$fechaMora;
 		$this->cuotasAdeudadas=$cuotasAdeudadas;
 		$this->estado=$estado;
-		$this->estudioAsignado=$estudioAsignado;
+		$this->idEstudioAsignado=$idEstudioAsignado;
 
 
+		$this->construirAtributosDeEstudio();
+
+
+	}
+
+
+	private function construirAtributosDeEstudio(){
+
+		switch($this->idEstudioAsignado){
+			case 46:
+				$this->nombreEstudioAsignado="GGGroup";
+				$this->telefonoEstudioAsignado="52729035";
+				break;
+			case 17:
+				$this->nombreEstudioAsignado="LaTorre";
+				$this->telefonoEstudioAsignado="52775700";
+				break;
+			case 40:
+				$this->nombreEstudioAsignado="Hadad LaTorre";
+				$this->telefonoEstudioAsignado="52775700";
+				break;
+			case 43:
+				$this->nombre="Paktar";
+				$this->telefonoEstudioAsignado="57762069";
+				break;
+			case 31:
+				$this->nombreEstudioAsignado="Rapan";
+				$this->telefonoEstudioAsignado=" 50327301";
+				break;
+			case 63:
+				$this->nombreEstudioAsignado="Cordial Collections";
+				$this->telefonoEstudioAsignado=" 52360001";
+				break;
+			case 59:
+				$this->nombreEstudioAsignado="Gestion Legal";
+				$this->telefonoEstudioAsignado=" 52732890";
+				break;
+			case 19:
+				$this->nombreEstudioAsignado="Recupero Integral";
+				$this->telefonoEstudioAsignado=" 08103454141";
+				break;
+			case 42:
+				$this->nombreEstudioAsignado="Recupero Integral Judicial";
+				$this->telefonoEstudioAsignado=" 08103454141";
+				break;
+			case 45:
+				$this->nombreEstudioAsignado="Recupero Integral G Especial SIT3";
+				$this->telefonoEstudioAsignado=" 08103454141";
+				break;
+			case 54:
+				$this->nombreEstudioAsignado="ENPRO";
+				$this->telefonoEstudioAsignado="39857120";
+				break;
+			case 56:
+				$this->nombreEstudioAsignado="ENPRO Gestion Especial";
+				$this->telefonoEstudioAsignado="39857120";
+				break;
+			case 62:
+				$this->nombreEstudioAsignado="HFA";
+				$this->telefonoEstudioAsignado="52782201";
+				break;
+			case 26:
+				$this->nombreEstudioAsignado="RAÑA";
+				$this->telefonoEstudioAsignado="52633333";
+				break;
+			case 61:
+				$this->nombreEstudioAsignado="PASTORIZA";
+				$this->telefonoEstudioAsignado="038315451183";
+				break;
+			case 57:
+				$this->nombreEstudioAsignado="GESPO";
+				$this->telefonoEstudioAsignado="52733800";
+				break;
+			case 58:
+				$this->nombreEstudioAsignado="SIPEF";
+				$this->telefonoEstudioAsignado="01143941365";
+				break;
+			case 50:
+				$this->nombreEstudioAsignado="WEISFELD JUDICIAL L";
+				$this->telefonoEstudioAsignado="37230300";
+				break;
+			case 29:
+				$this->nombreEstudioAsignado="WEISFELD JUDICIAL";
+				$this->telefonoEstudioAsignado="37230300";
+				break;
+			case 60:
+				$this->nombreEstudioAsignado="TRANSVALORES";
+				$this->telefonoEstudioAsignado="0261153168784";
+				break;
+			case 0:
+				$this->nombreEstudioAsignado="";
+				$this->telefonoEstudioAsignado="203";
+				break;
+		}//SWITCH
+		
 	}
 
 

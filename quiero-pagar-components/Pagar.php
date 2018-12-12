@@ -1,14 +1,53 @@
 <?php 
 require_once("../Clases/Usuario.php");
+require_once("../Clases/Mailer.php");
+require_once("../Clases/Producto.php");
+require_once("../Clases/BaseDatos.php");
 session_start();
 
-$_SESSION['monto']=$_GET['monto'];
+//$_SESSION['monto']=$_GET['monto'];
 
 if(isset($_SESSION['usuario'])){
+
+	$bd = new BaseDatos();
 
 	$usuario  = new Usuario();
 
 	$usuario = unserialize($_SESSION['usuario']);
+
+	$usuario->email=$_POST['email'];
+
+	$usuario->telefono=$_POST['telefono'];
+
+	$mailer  = new Mailer();
+
+	$productoElegido = $usuario->buscarProductoPorNro($_SESSION['productoAPagar']);
+
+
+
+	if($bd->buscarReporte($productoElegido->numero,$usuario->documento)==false){
+		
+		$bd->insertarReporte(
+			$productoElegido->numero,
+			$usuario->documento,
+			$usuario->nombre,
+			$usuario->email,
+			$usuario->telefono,
+			$productoElegido->nombreEstudioAsignado,
+			$productoElegido->telefonoEstudioAsignado,
+			$productoElegido->nombre,
+			$productoElegido->saldo,
+			$productoElegido->cuotasAdeudadas,
+			$productoElegido->fechaMora,
+			date("Y-m-d"));
+
+	}else{
+		$bd->actualizarFechaReporte(date("Y-m-d"),$productoElegido->numero,$usuario->documento,$usuario->email,$usuario->telefono);
+	}
+
+	
+
+	$mailer->enviarReporte($usuario,$productoElegido);
 
 }else{
 
@@ -34,39 +73,75 @@ if(isset($_SESSION['usuario'])){
 
 		<h2>GESTIONE SUS CUENTAS</h2>
 		<h4>1.Comuniquese con el departamento de cobranzas</h4>
-		<a  id="click2call_callbtn">
+		
+		
+
+		
+
+			<?php if($productoElegido->telefonoEstudioAsignado==203): ?>
+
+			
+			<h2 class="telefono-llamar">7078-6500</h2>
+			<h4 class="telefono-llamar">Opcion 3 - Cobranzas</h4>
+
+			<a  id="click2call_callbtn" class="llamar-btn">
 			<img src="img/llamar-icon-01.png" class="llamar-icon" alt="Llamar al departamento de cobranzas">
-		</a>
-		<a id="click2call_hupbtn">
-		<img  src="img/colgar-icon-01.png" class="llamar-icon" alt="Llamar al departamento de cobranzas">
-		</a>
+			</a>
+			<a id="click2call_hupbtn">
+			<img  src="img/colgar-icon-01.png" class="llamar-icon" alt="Llamar al departamento de cobranzas">
+			</a>
+
+			<div id="click2call_msgdiv"></div>
+			<div style="visibility: hidden; display: none;">
+
+			<input id="click2call_user" value="987">
+
+			<input id="click2call_domain" value="argen.grancentral.com.ar">
+
+			<input id="click2call_password" value="9d7@a48c">
+
+			<input id="click2call_number" value="203">
+
+			<input id="click2call_host" value="wss://webrtc.anura.com.ar:9084">
+			</div>
+			<div id="media" style="visibility: hidden; display: none;">
+			<video width=800 id="webcam" autoplay="autoplay" hidden="true"></video>
+			</div>
+			</div>
+
+
+		<?php else: ?>
+
+			<h2 class="telefono-llamar"><?php echo $productoElegido->telefonoEstudioAsignado ?></h2>
+			<h2 class="telefono-llamar">Estudio <?php echo $productoElegido->nombreEstudioAsignado ?></h2>
+
+			<a class="llamar-btn"  href="tel:<?php echo $productoElegido->telefonoEstudioAsignado ?>">
+			<img src="img/llamar-icon-01.png" class="llamar-icon" alt="Llamar al departamento de cobranzas">
+			</a>
+
+		<?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 		<a href="Consultar-Deuda.php" class="volver text-center center-block">
 			<h5>VOLVER</h5>
 			<img src="img/back-arrow.png" alt="" class="" style="width:60px">
 		</a>
 
-
-
-		<div id="click2call_msgdiv"></div>
-		<div style="visibility: hidden; display: none;">
-
-		<input id="click2call_user" value="987">
-
-		<input id="click2call_domain" value="argen.grancentral.com.ar">
-
-		<input id="click2call_password" value="9d7@a48c">
-
-		<input id="click2call_number" value="203">
-
-		<input id="click2call_host" value="wss://webrtc.anura.com.ar:9084">
-		</div>
-		<div id="media" style="visibility: hidden; display: none;">
-		<video width=800 id="webcam" autoplay="autoplay" hidden="true"></video>
-		</div>
-		</div>
-
-
+		
+		
 
 
 		

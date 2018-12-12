@@ -4,6 +4,8 @@ require_once("Producto.php");
 
 		public $parametros;
 		public $soapClient;
+		public $email;
+		public $telefono;
 
 		public $documento;
 		public $nombre;
@@ -21,6 +23,9 @@ require_once("Producto.php");
 		}//function
 
 
+
+
+
 		function crearUsuarioPorDocumento($documento,$ticket){
 
 			$this->parametros["documento"]=$documento;
@@ -28,10 +33,18 @@ require_once("Producto.php");
 			$this->datos=$this->soapClient->ConsultaPorDocumento($this->parametros);
 
 			if(isset($this->datos->ConsultaPorDocumentoResult->Documento)){
+				
 				$this->documento = $this->datos->ConsultaPorDocumentoResult->Documento;
 				$this->nombre = $this->datos->ConsultaPorDocumentoResult->Nombre;
 				$this->cantidadProductos = $this->datos->ConsultaPorDocumentoResult->CantidadProductos;
 				$this->saldoTotal = $this->datos->ConsultaPorDocumentoResult->SaldoTotal;
+
+				return true;
+
+			}else{
+
+				return false;
+
 			}
 		}//function
 
@@ -83,9 +96,28 @@ require_once("Producto.php");
 			}
 
 
+		
+
+
 		}//function
 
 
+		function buscarProductoPorNro($nro){
+
+			foreach($this->productos as $producto){
+
+				if($producto->numero==$nro){
+
+
+					return $producto;
+
+				}
+
+
+			}
+
+
+		}//funcion
 
 
 

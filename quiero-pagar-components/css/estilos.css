@@ -45,14 +45,23 @@ p{
   font-family: ubuntu-regular !important;
 }
 
+label{
+	display:block;
+	font-family: ubuntu-regular !important;
+	color:grey;
+}
+
 
 p>span{
   color:#EB5938;
 }
 
+.ing-datos-input,.ing-datos-label{
+	margin-top: 1%;
+}
 
 	 	form {
-		  margin-top: 4%;
+		 /* margin-top: 4%;*/
 		  padding-bottom: 5%;
 		  text-align:center;
 		}
@@ -66,6 +75,8 @@ p>span{
 		  border-bottom-color:#1DA2DC;
 		  text-align: center;
 		  width:30%;
+		  font-family: helvetica;
+		  transition:border-bottom 0.75s;
 		}
 
 		h4{
@@ -132,11 +143,11 @@ p>span{
 
 
 .btn:hover{
-  box-shadow: -3px 4px #020302;
+  /*box-shadow: -3px 4px #020302;*/
   color:#FFF100;
   padding:9px;
   background-color: #da4f2f;
-  margin: 5px 0 0 -5px;
+  /*margin: 5px 0 0 -5px;*/
   transition:box-shadow 0.2s,background-color 0.2s,padding 0.2s,margin 0.2s; 
 
 }
@@ -256,4 +267,50 @@ p>span{
 #click2call_msgdiv {
     font-size: 15px;
     font-weight: bold;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+
+.error{
+	color:red;
+	font-weight: bolder;
+	margin:0;
+    padding: 15px 15px 0px 15px;
+	display:none;
+	font-family: ubuntu-regular;
+}
+
+.llamar-btn{
+	display:none;
+}
+
+.telefono-llamar{
+	display:block;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+    border-color:#EB5938;
+    transition: border-color 0.5s;
+}
+
+@media only screen and (min-width: 10px) and (max-width: 768px) {
+
+.llamar-btn{
+	display:block;
+}
+
+.telefono-llamar{
+	display:none;
+}
+
+form input {
+    width: 50%;
+}
 }

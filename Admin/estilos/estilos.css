@@ -1,0 +1,182 @@
+@font-face {
+    font-family: bebas-bold;
+    src: url(fonts/BebasNeueBold.otf);
+}
+
+@font-face {
+    font-family: ubuntu-regular;
+    src: url(fonts/Ubuntu-R.ttf);
+}
+
+@font-face {
+    font-family: ubuntu-bold;
+    src: url(fonts/Ubuntu-B.ttf);
+}
+/********************************GRAL***************************************/
+
+.fa-power-off{
+  font-size: 35px;
+  color:#1DA2DC;
+  transition:color 0.5s;
+}
+
+.cerrar-sesion-row a i:hover{
+  color:#1984b3;
+  transition:color 0.5s;
+}
+
+
+.cerrar-sesion-row{
+  padding-top:4px;
+}
+
+.bk{
+/*  background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;*/
+background-color:#1DA2DC;
+}
+
+h1{
+  float:right;
+  margin:0;
+  margin-top: 9px;
+  color: #1DA2DC;
+  font-family: ubuntu-bold;
+}
+
+
+
+.panel-login{
+  
+
+       position: absolute;
+    display: inline-block;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    border: 1px solid #b3afaf;
+    background-color:#e6e6e6;
+
+
+}
+
+.panel-body{
+  padding: 15px 55px 55px 55px;
+}
+
+
+
+.panel-login form{
+  margin-top: 5%;
+}
+
+.panel-header{
+  width: 100%;
+  margin-top: 0;
+  height: 50px;
+  padding: 15px 15px 15px 15px;
+
+}
+
+.panel-header img{
+  float:left;
+  margin:0;
+}
+
+.panel-header h4{
+  float:right;
+  margin-top: 10px;
+  color:grey;
+}
+
+
+.btn{
+background-color: #1DA2DC;
+    border-radius: 6px;
+    color: white;
+    padding: 10px;
+    font-family: helvetica;
+    font-size: 2rem;
+
+}
+
+
+
+
+/**************************************MEDIA QUERYS**************************************************************/
+@media only screen and (min-width: 10px) and (max-width: 769px) {
+
+section{
+  text-align: center;
+}
+section#index  .prin-cont{
+  padding-bottom: 20px;
+
+}
+
+section#index .metodos-list li{
+  display:inline-block;
+}
+
+section#index .metodos-list li .img-width {
+    width: 46px;
+}
+
+section#index .metodos-list li img {
+    width: 83px;
+}
+
+
+}
+
+
+
+@media only screen and (min-width: 10px) and (max-width: 414px) {
+
+
+}
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 768px) and (orientation:portrait) {
+
+
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 850px) and (orientation:landscape) {
+ section#index  .prin-cont{
+  text-align: center;
+  padding-bottom: 20px;
+
+}
+  
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+  nav ul li {
+    margin-left: 4%;
+ }
+
+
+}
+
+
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+
+	
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1920px) {
+
+	
+}
+
+

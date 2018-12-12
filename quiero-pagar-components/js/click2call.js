@@ -122,6 +122,7 @@ function displayCalling() {
 
 function displayReady2Call() {
 	$("#click2call_callbtn").show();
+	$("#click2call_callbtn").css("display","");
 	$("#click2call_hupbtn").hide();
 }
 

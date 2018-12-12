@@ -62,11 +62,11 @@ footer p{
 
 
 .btn:hover{
-  box-shadow: -3px 4px #020302;
+  /*box-shadow: -3px 4px #020302;*/
   color:#FFF100;
   padding:9px;
   background-color: #da4f2f;
-  margin: 5px 0 0 -5px;
+  /*margin: 5px 0 0 -5px;*/
   transition:box-shadow 0.2s,background-color 0.2s,padding 0.2s,margin 0.2s; 
 
 }
@@ -510,7 +510,7 @@ section#contacto p img{
 }
 
 section#contacto .btn:hover{
-  margin: 5px 5px 0 0px;
+  /*margin: 5px 5px 0 0px;*/
   transition:box-shadow 0.2s,background-color 0.2s,padding 0.2s,margin 0.2s; 
 
 }
@@ -586,6 +586,77 @@ section#contacto .img-cont img{
         .jssora051:hover {opacity:.8;}
         .jssora051.jssora051dn {opacity:.5;}
         .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+
+
+.error{
+  color:red;
+  font-weight: bolder;
+  margin:0;
+    padding: 5px 15px 5px 0;
+  display:none;
+  font-family: ubuntu-regular;
+}
+
+
+/*PRELOADER*/
+    /* Preloader */
+
+    #preloader h3{
+      text-align: center;
+        margin-top: 3%;
+        color: #1DA2DC;
+        font-weight: bold;
+        font-family: ubuntu-regular;
+    }
+
+    #preloader {
+            position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        z-index: 10043;
+        height: 100vh;
+    }
+
+    #status {
+             position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: -25%;
+    margin: auto;
+    display: table;
+    overflow: auto;
+    /* height: 100px; */
+    /* width: 552px; */
+    color: white;
+    }
+
+    .spinner-sm {
+            border: 5px solid #ec5125;
+        border-top: 5px solid #1da2dc;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 0.80s linear infinite;
+    }
+  
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .modal-body{
+    font-family: raleway-b;
+    text-align: center;
+}
+
+.modal {
+    top: 50px;
+}
 
 /**************************************MEDIA QUERYS**************************************************************/
 @media only screen and (min-width: 10px) and (max-width: 769px) {

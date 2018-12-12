@@ -16,14 +16,20 @@
 <body>
 
 <form action="Consultar-Deuda.php" method="POST"  id="myForm"  class="text-center" >
-				<h2>BUSCAR DEUDAS A MI NOMBRE</h2>
-				<p>Ingrese su número de DNI <br> para conocer el saldo de su deuda.</p>
-				
-				<input type="text"  name="documento" id="documento">
-
-				<br><br>
-
-				<a class="btn" id="enviar" >ENVIAR</a>
+	<h2>BUSCAR DEUDAS A MI NOMBRE</h2>
+	
+			<p>Ingrese su número de DNI <br> para conocer el saldo de su deuda.</p>
+			
+			<input type="number"  name="documento" id="documento" autocomplete="off">
+			
+				<p class="error" id="documento-error">
+					Ingrese un documento valido
+				</p>
+			
+			<br><br>
+		
+		<a class="btn" id="enviar" >ENVIAR</a>
+	
 </form>
 
 
@@ -35,10 +41,10 @@
 	 	var documento = $("#documento").val();
 
 
-	 	if(documento.length==0 || documento.search(soloNumeros)){
+	 	if(documento.length<7 || documento.length>8 || documento.search(soloNumeros)){
 
 
-	 	alert("error");
+	 		$("#documento-error").fadeIn();
 
 	 	}else{
 	 		$("body").prepend( '<div id="preloader"><h3>Estamos procesando sus datos...</h3><div class="spinner-sm spinner-sm-1" id="status"> </div></div>' );

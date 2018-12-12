@@ -12,11 +12,16 @@ if(isset($_POST['documento'])){
 
 	$usuario->setSoapClient($api->soapClient);
 
-	$usuario->crearUsuarioPorDocumento($_POST['documento'],$api->getTicket());
+	if($usuario->crearUsuarioPorDocumento($_POST['documento'],$api->getTicket())==true){
 
-	//var_dump($usuario);
+		$usuario->obtenerProductosPorDocumento();
 
-	$_SESSION['usuario'] = serialize($usuario);
+		//var_dump($usuario);
+
+		$_SESSION['usuario'] = serialize($usuario);
+	}
+
+	
 
 }else{
 
@@ -74,7 +79,7 @@ if(isset($_POST['documento'])){
 			<tbody>
 
 
-				<?php foreach($usuario->obtenerProductosPorDocumento() as $producto):?>
+				<?php foreach($usuario->productos as $producto):?>
 					
 					<!-- setear clases de table row -->
 					<?php if($producto->estado=="Atrasada"): ?>
@@ -161,7 +166,7 @@ if(isset($_POST['documento'])){
 
 						<?php if($paga==1): ?>
 
-							  <td><a href="Pagar.php?monto=<?php echo $producto->saldo ?>">PAGAR</a></td>
+							  <td><a href="IngresarDatos.php?id=<?php echo $producto->numero ?>">PAGAR</a></td>
 
 						<?php else: ?>
 
