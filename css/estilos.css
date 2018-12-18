@@ -27,6 +27,7 @@ body{
 }
 
 footer{
+  display:none;
   padding:5%;
  background: repeating-linear-gradient(
   145deg,

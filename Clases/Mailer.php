@@ -105,10 +105,10 @@ require_once("Producto.php");
 
 
 
-	  			$mail->From = "info@c1250353.ferozo.com";
+	  			$mail->From = "deudaonline@argenpesos.com.ar";
 	  			$mail->FromName = " Argenpesos - sitio web";
 				 $mail->Subject = "ArgenPesos - El usuario ".$usuario->nombre." ha realizado una solicitud de pago";
-	    		$mail->AddAddress("mcd77.1990@gmail.com","Deuda Online");
+	    		$mail->AddAddress("deudaonline@argenpesos.com.ar","Deuda Online");
 	    		$mail->Body = $cuerpo;
 	     		$mail->AltBody = "";
 	     		$mail->Send();

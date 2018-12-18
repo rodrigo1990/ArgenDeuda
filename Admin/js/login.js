@@ -2,10 +2,12 @@ function validarUsuario(){
 
 		var email=$("#usuario").val();
 		var contrasena=$("#contrasena").val();
+		var recordar=$("#recordar:checked").val();
+
 
 			$.ajax({
 
-				data:{email:email,contrasena:contrasena},
+				data:{email:email,contrasena:contrasena,recordar:recordar},
 				url:'ajax/validarUsuario.php',
 				type:'post',
 				success:function(response){

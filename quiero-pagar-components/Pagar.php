@@ -83,6 +83,7 @@ if(isset($_SESSION['usuario'])){
 			
 			<h2 class="telefono-llamar">7078-6500</h2>
 			<h4 class="telefono-llamar">Opcion 3 - Cobranzas</h4>
+			<h5 class="telefono-llamar">Lu a Vi 08:00 a 20:00 hs <br> Sab 09:00 a 13:00 hs</h5>
 
 			<a  id="click2call_callbtn" class="llamar-btn">
 			<img src="img/llamar-icon-01.png" class="llamar-icon" alt="Llamar al departamento de cobranzas">

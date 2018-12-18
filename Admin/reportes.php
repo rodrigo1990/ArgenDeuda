@@ -7,6 +7,9 @@ if(!isset($_SESSION['pass'])&&!isset($_SESSION['email'])){
 $bd  = new BaseDatos();
 
 $bd->consultarReportes();
+
+
+echo $_SESSION['recordarUsuario'];
  ?>
 
 <?php include("inc/head.php") ?>
@@ -15,7 +18,7 @@ $bd->consultarReportes();
 <header>
 	<div class="row cerrar-sesion-row">
 		<div class="container">
-			<a href="index.php" style="float:right"><i class="fas fa-power-off"></i></a>
+			<a href="index.php?session=0" style="float:right"><i class="fas fa-power-off"></i></a>
 		</div>
 	</div>
 	<div class="row">

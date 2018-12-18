@@ -16,9 +16,9 @@
 <body>
 
 <form action="Consultar-Deuda.php" method="POST"  id="myForm"  class="text-center" >
-	<h2>BUSCAR DEUDAS A MI NOMBRE</h2>
+	<h2>ESTADOS DE CUENTA A MI NOMBRE</h2>
 	
-			<p>Ingrese su número de DNI <br> para conocer el saldo de su deuda.</p>
+			<p>Ingrese su número de DNI <br> para conocer el estado de cuenta.</p>
 			
 			<input type="number"  name="documento" id="documento" autocomplete="off">
 			
