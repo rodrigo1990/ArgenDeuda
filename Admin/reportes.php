@@ -8,8 +8,6 @@ $bd  = new BaseDatos();
 
 $bd->consultarReportes();
 
-
-echo $_SESSION['recordarUsuario'];
  ?>
 
 <?php include("inc/head.php") ?>

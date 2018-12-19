@@ -74,7 +74,7 @@ if(isset($_POST['documento'])){
 				<th class="text-center">Estado</th>
 				<th class="text-center">Cuotas Adeudadas</th>
 				<th class="text-center">Saldo</th>
-				<th class="text-center">Pagar</th>
+				<th class="text-center">Detalle</th>
 			</thead>
 			<tbody>
 
@@ -141,8 +141,8 @@ if(isset($_POST['documento'])){
 
 
 
-
-						<td><?php echo $producto->fechaMora; ?></td>
+				
+						<td><?php echo date('d-m-Y',strtotime($producto->fechaMora)); ?></td>
 
 
 
@@ -166,7 +166,7 @@ if(isset($_POST['documento'])){
 
 						<?php if($paga==1): ?>
 
-							  <td><a href="IngresarDatos.php?id=<?php echo $producto->numero ?>">PAGAR</a></td>
+							  <td><a href="IngresarDatos.php?id=<?php echo $producto->numero ?>">CONSULTAR</a></td>
 
 						<?php else: ?>
 
