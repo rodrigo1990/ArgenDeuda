@@ -67,6 +67,7 @@ if(isset($_SESSION['usuario'])){
 	<title>Argen deuda</title>
 	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 <body class="text-center padding-top">
 	<h4><?php echo $usuario->nombre?></h4>
@@ -121,6 +122,12 @@ if(isset($_SESSION['usuario'])){
 			</a>
 
 		<?php endif; ?>
+
+
+		<h2>O comunicate a nuestro Whatsapp</h2>
+			<a class="wsp-btn" href="https://api.whatsapp.com/send?phone=5491162213852&text=%C2%A1Hola!%20Queria%20hacer%20una%20consulta%20acerca%20de%20los%20servicios%20vistos%20en%20consulta%20tu%20cuenta%20www.argenpesos.com.ar" target="_blank">
+				<i class="fab fa-whatsapp" style=""></i>
+		</a>
 
 
 

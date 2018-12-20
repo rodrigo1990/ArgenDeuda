@@ -14,7 +14,7 @@
 <section id="quiero-pagar">
 	<div class="container text-center ">
 		<div class="row">
-			<iframe src="quiero-pagar-components/quiero-pagar-form.php" id="iFrame" frameborder="0" style="width:100%;height: 400px;"></iframe>
+			<iframe src="quiero-pagar-components/quiero-pagar-form.php" id="iFrame" frameborder="0" style="width:100%;height: 800px;"></iframe>
 		</div>
 
 

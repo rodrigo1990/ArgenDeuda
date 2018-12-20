@@ -52,41 +52,43 @@ require_once("Producto.php");
 		function obtenerProductosPorDocumento(){
 
 			if ($this->datos){
-				//Si nada mas tiene un producto lo agregar al array productos de manera directa
-				if($this->cantidadProductos==1){
+				if($this->cantidadProductos!=0){
+					//Si nada mas tiene un producto lo agregar al array productos de manera directa
+					if($this->cantidadProductos==1){
 
-					array_push($this->productos,
-						new Producto(
-						$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Numero,
-						$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Nombre,
-						$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Moneda,
-						$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Saldo,
-						date("Y-m-d",strtotime($this->datos->ConsultaPorDocumentoResult->Productos->Producto->FechaMora)),
-						$this->datos->ConsultaPorDocumentoResult->Productos->Producto->CuotasAdeudadas,
-						$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Status,
-						$this->datos->ConsultaPorDocumentoResult->Productos->Producto->EstudioAsignado
-
-					));
-
-					return $this->productos;
-
-				//Sino va a iterar en cada objeto Producto del Array Productos proveniente del web service
-				}else{
-					foreach($this->datos->ConsultaPorDocumentoResult->Productos->Producto as $productoService){
-						array_push(
-							$this->productos,
+						array_push($this->productos,
 							new Producto(
-								$productoService->Numero,
-								$productoService->Nombre,
-								$productoService->Moneda,
-								$productoService->Saldo,
-								date("Y-m-d",strtotime($productoService->FechaMora)),
-								$productoService->CuotasAdeudadas,
-								$productoService->Status,
-								$productoService->EstudioAsignado));
-					}
+							$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Numero,
+							$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Nombre,
+							$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Moneda,
+							$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Saldo,
+							date("Y-m-d",strtotime($this->datos->ConsultaPorDocumentoResult->Productos->Producto->FechaMora)),
+							$this->datos->ConsultaPorDocumentoResult->Productos->Producto->CuotasAdeudadas,
+							$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Status,
+							$this->datos->ConsultaPorDocumentoResult->Productos->Producto->EstudioAsignado
 
-					return $this->productos;
+						));
+
+						return $this->productos;
+
+					//Sino va a iterar en cada objeto Producto del Array Productos proveniente del web service
+					}else{
+						foreach($this->datos->ConsultaPorDocumentoResult->Productos->Producto as $productoService){
+							array_push(
+								$this->productos,
+								new Producto(
+									$productoService->Numero,
+									$productoService->Nombre,
+									$productoService->Moneda,
+									$productoService->Saldo,
+									date("Y-m-d",strtotime($productoService->FechaMora)),
+									$productoService->CuotasAdeudadas,
+									$productoService->Status,
+									$productoService->EstudioAsignado));
+						}
+
+						return $this->productos;
+					}//
 				}
 
 			}else{

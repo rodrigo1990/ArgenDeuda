@@ -127,6 +127,10 @@ class Producto{
 				$this->nombreEstudioAsignado="TRANSVALORES";
 				$this->telefonoEstudioAsignado="0261153168784";
 				break;
+			case 6:
+				$this->nombreEstudioAsignado="ARGENCOBROS";
+				$this->telefonoEstudioAsignado="203";
+				break;
 			case 0:
 				$this->nombreEstudioAsignado="";
 				$this->telefonoEstudioAsignado="203";

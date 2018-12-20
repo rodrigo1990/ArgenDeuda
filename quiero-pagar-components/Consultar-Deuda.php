@@ -16,7 +16,7 @@ if(isset($_POST['documento'])){
 
 		$usuario->obtenerProductosPorDocumento();
 
-//		var_dump($usuario);
+		//var_dump($usuario);
 
 		$_SESSION['usuario'] = serialize($usuario);
 	}
@@ -45,6 +45,9 @@ if(isset($_POST['documento'])){
 	<title>Argen deuda</title>
 	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
 </head>
 <body class="text-center padding-top">
 
@@ -58,6 +61,9 @@ if(isset($_POST['documento'])){
 	<?php if($usuario->documento!=0 ): ?>
 
 		<h4><?php echo $usuario->nombre;?></h4>
+
+	<!-- si la cantidad de productos es diferente de 0 mostramos las filas de productos -->
+	<?php if($usuario->cantidadProductos!=0):  ?>
 
 		<h2>EL DETALLE DE SU DEUDA</h2>
 
@@ -96,7 +102,7 @@ if(isset($_POST['documento'])){
 
 							<?php $color="green" ?>
 
-							<?php $paga=0; ?>
+							<?php $paga=1; ?>
 
 					<?php elseif($producto->estado=="En estudio" || $producto->estado=="En Estudio"): ?>
 
@@ -157,9 +163,15 @@ if(isset($_POST['documento'])){
 						<td><?php echo $producto->cuotasAdeudadas; ?></td>
 
 
+						<?php if($producto->nombreEstudioAsignado=="ARGENCOBROS"): ?>
+						
+							<td>A CONSULTAR</td>
 
+						<?php else: ?>
 
-						<td><?php echo "$ ".$producto->saldo.""; ?></td>
+							<td><?php echo "$ ".$producto->saldo.""; ?></td>
+
+						<?php endif; ?>
 
 
 
@@ -183,6 +195,49 @@ if(isset($_POST['documento'])){
 
 			</tbody>
 		</table>
+		
+		<!-- sino, mostramos la leyendra de no poseer creditors, y el numero telefono de argenpesos -->
+		<?php else: ?>
+				
+				<h2>No posee creditos activos a la fecha</h2>
+
+
+				<h2 class="telefono-llamar">7078-6500</h2>
+				<h4 class="telefono-llamar">Opcion 3 - Cobranzas</h4>
+				<h5 class="telefono-llamar">Lu a Vi 08:00 a 20:00 hs <br> Sab 09:00 a 13:00 hs</h5>
+
+				<a  id="click2call_callbtn" class="llamar-btn">
+				<img src="img/llamar-icon-01.png" class="llamar-icon" alt="Llamar al departamento de cobranzas">
+				</a>
+				<a id="click2call_hupbtn">
+				<img  src="img/colgar-icon-01.png" class="llamar-icon" alt="Llamar al departamento de cobranzas">
+				</a>
+
+				<div id="click2call_msgdiv"></div>
+				<div style="visibility: hidden; display: none;">
+
+				<input id="click2call_user" value="987">
+
+				<input id="click2call_domain" value="argen.grancentral.com.ar">
+
+				<input id="click2call_password" value="9d7@a48c">
+
+				<input id="click2call_number" value="203">
+
+				<input id="click2call_host" value="wss://webrtc.anura.com.ar:9084">
+				</div>
+				<div id="media" style="visibility: hidden; display: none;">
+				<video width=800 id="webcam" autoplay="autoplay" hidden="true"></video>
+				</div>
+				</div>
+
+				<h2>O comunicate a nuestro Whatsapp</h2>
+				<a class="wsp-btn" href="https://api.whatsapp.com/send?phone=5491162213852&text=%C2%A1Hola!%20Queria%20hacer%20una%20consulta%20acerca%20de%20los%20servicios%20vistos%20en%20consulta%20tu%20cuenta%20www.argenpesos.com.ar" target="_blank">
+					<i class="fab fa-whatsapp" style=""></i>
+				</a>
+		<?php endif; ?>
+
+
 		<br><br><br>
 		<a href="quiero-pagar-form.php" class="volver text-center center-block">
 			<h5>VOLVER</h5>
@@ -217,6 +272,24 @@ if(isset($_POST['documento'])){
 		<?php
 			}//endCatch
 		 ?>
+
+
+	<script type="text/javascript"
+		    src="https://webrtc.anura.com.ar/click2call/js/jquery-2.1.1.min.js">
+		</script>
+		<script type="text/javascript"
+		    src="https://webrtc.anura.com.ar/click2call/js/jquery.json-2.4.min.js">
+		</script>
+		<script type="text/javascript"
+		    src="https://webrtc.anura.com.ar/click2call/js/jquery.cookie.js">
+		</script>
+		<script type="text/javascript"
+		    src="js/verto-min.js">
+		</script>
+		<script type="text/javascript"
+		    src="js/click2call.js">
+		</script>
+
 
 </body>
 </html>

@@ -56,6 +56,17 @@ p>span{
   color:#EB5938;
 }
 
+
+.wsp-btn{
+	cursor:pointer;
+}
+
+
+.wsp-btn i{
+	font-size:200px;
+	color:#15b515
+}
+
 .ing-datos-input,.ing-datos-label{
 	margin-top: 1%;
 }
