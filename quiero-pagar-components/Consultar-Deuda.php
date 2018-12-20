@@ -16,7 +16,7 @@ if(isset($_POST['documento'])){
 
 		$usuario->obtenerProductosPorDocumento();
 
-		//var_dump($usuario);
+//		var_dump($usuario);
 
 		$_SESSION['usuario'] = serialize($usuario);
 	}
@@ -90,7 +90,7 @@ if(isset($_POST['documento'])){
 
 							<?php $paga=1; ?>
 
-					<?php elseif($producto->estado=="Al dia"): ?>
+					<?php elseif($producto->estado=="Al dia" || $producto->estado=="Al Día" || $producto->estado=="Al Dia"): ?>
 
 							<?php $rowClass="green-bk" ?>
 
@@ -98,7 +98,7 @@ if(isset($_POST['documento'])){
 
 							<?php $paga=0; ?>
 
-					<?php elseif($producto->estado=="En estudio"): ?>
+					<?php elseif($producto->estado=="En estudio" || $producto->estado=="En Estudio"): ?>
 
 							<?php $rowClass="yellow-bk" ?>
 
@@ -170,7 +170,7 @@ if(isset($_POST['documento'])){
 
 						<?php else: ?>
 
-							   <td class="grey">PAGAR</td>
+							   <td class="grey">CONSULTAR</td>
 
 					  	<?php endif;?>
 						

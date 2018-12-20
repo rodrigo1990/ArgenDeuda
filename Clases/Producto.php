@@ -131,6 +131,9 @@ class Producto{
 				$this->nombreEstudioAsignado="";
 				$this->telefonoEstudioAsignado="203";
 				break;
+			default:
+				$this->nombreEstudioAsignado="";
+				$this->telefonoEstudioAsignado="203";
 		}//SWITCH
 		
 	}

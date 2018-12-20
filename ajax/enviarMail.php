@@ -43,8 +43,8 @@ require("../Clases/php-mailer/class.phpmailer.php");
   	$mail->FromName = "Formulario de contacto Argenpesos-Deuda Online";
 	 $mail->Subject = "Consulta via sitio web";
     //$mail->AddAddress("tmallo@argenpesos.com.ar","Deuda Online");
-    //$mail->AddAddress("mcd77.1990@gmail.com","Deuda Online");
-   $mail->AddAddress("deudaonline@argenpesos.com.ar","Argenpesos");
+    $mail->AddAddress("mcd77.1990@gmail.com","Deuda Online");
+   //$mail->AddAddress("deudaonline@argenpesos.com.ar","Argenpesos");
    
     $mail->Body = $cuerpo;
      $mail->AltBody = "";

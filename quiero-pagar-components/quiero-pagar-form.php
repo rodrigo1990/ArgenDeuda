@@ -41,7 +41,7 @@
 	 	var documento = $("#documento").val();
 
 
-	 	if(documento.length<7 || documento.length>8 || documento.search(soloNumeros)){
+	 	if(documento.length<6 || documento.length>8 || documento.search(soloNumeros)){
 
 
 	 		$("#documento-error").fadeIn();
