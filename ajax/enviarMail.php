@@ -19,7 +19,7 @@ require("../Clases/php-mailer/class.phpmailer.php");
 
     $cuerpo.="<tr>
               <td>
-              <img src='http://www.legioncreativa.com/test/argendeuda/img/logo.png' style='width:300px;margin-left:auto;margin-right:auto;display:block'>
+              <img src='https://www.argenpesos.com.ar/micuenta/img/logo.png' style='width:300px;margin-left:auto;margin-right:auto;display:block'>
               </td>
             </tr>";
 

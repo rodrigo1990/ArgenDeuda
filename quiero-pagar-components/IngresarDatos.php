@@ -29,7 +29,7 @@ if(!isset($_SESSION['usuario'])){
 		<label for="telefono" class="ing-datos-label">Ingrese su numero telefonico</label>
 		<input type="number" name="telefono" id="telefono" placeholder="Ej:1196431100" class="ing-datos-input" autocomplete="off">
 		<p class="error" id="telefono-error">
-			Ingrese un telefono valido
+			Ingrese cod. área + número Ej:1144556677
 		</p>
 		<br><br><br>
 

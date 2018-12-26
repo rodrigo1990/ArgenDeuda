@@ -21,12 +21,12 @@
 			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
 				<h2>¿POR QUÉ DEJAR DE SER DEUDOR?</h2>
 				<p>
-					La mora financiera ocasiona pérdida del crédito personal, intimaciones permanentes y problemas jurídicos. A veces, determinadas situaciones pueden conducirnos al incumplimiento aunque tengamos el deseo de pagar. Por eso creamos <b>ArgenPagos:</b> porque sabemos que cancelar deudas es <b>más fácil que nunca </b> y porque creemos que estar al día con los pagos es apostar por una <b>mejor calidad de vida.</b> 
+					La mora financiera ocasiona pérdida del crédito personal, intimaciones permanentes y problemas jurídicos. Diversas situaciones pueden conducirnos al incumplimiento a pesar de que tengamos el deseo de pagar. Por eso creamos <b>ArgenPagos</b>, para facilitarte la consulta de tu cuenta <b>más rápido y fácil que nunca.</b> 
 				</p>
 				
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center ">
-				<a class="btn" href="quiero-pagar.php">BUSCAR DEUDAS <br> <span>A MI NOMBRE</span></a>
+				<a class="btn" href="quiero-pagar.php">BUSCAR DEUDAS ARGENPESOS <br> <span>A MI NOMBRE</span></a>
 				<img src="img/figura-4.png" alt="" width=30% class="img-lg">
 			</div>
 		</div>
@@ -41,7 +41,7 @@
 				</div>
 
 				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
-					<h2>¿COMO SE COMPONE UNA DEUDA ACTUALIZADA?</h2>
+					<h2>¿CÓMO SE COMPONE UNA DEUDA ACTUALIZADA?</h2>
 					<p><span>A la deuda inicial se le suma:</span></p>
 					<p>
 						El interés compensatorio <b>"compensa"</b> al acreedor por el tiempo en que éste <b>"cede"</b> su dinero al deudor. Este interés sólo se debe si se ha pactado previamente, con excepción de los <b>"compensatorios legales"</b> (Artículos 466, 1950 y 2298 del Código Civil) y sólo es aplicable a la obligación contractual, a diferencia del Moratorio que es aplicable a todas las obligaciones.

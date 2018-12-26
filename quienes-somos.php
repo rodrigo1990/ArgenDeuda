@@ -20,12 +20,11 @@
 		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
 			<h1>ARGEN PAGOS</h1>
 			<p>
-				Con Argen Pagos obtenés los mejores planes de pago y podés deshacerte de tus deudas de manera <b> fácil, rápida y transparente </b>.
-				Nuestros clientes son policias, retirados, docentes, ministerio de salud de Buenos Aires, entre otros. Nos contratan con el fin de que te ofrezcamos la mejor alternativa para cancelar tu deuda.
+				Con Argen Pagos obtenés los mejores planes de pago y podés deshacerte de tus deudas de manera <b>fácil, rápida y transparente</b>. 
 			</p>
-			<p><span><b>Contacte con nuestros especialistas que esucharán tu situación personal y te ayudarán con el pago</b></span>.</p>
-			<br>
-			<a class="btn"  href="contacto.php">CONTACTAR</a>
+			<p><span><b>Contacte con nuestros asesores que analizarán tu situacion personal y te ayudarán con el pago de tus cuotas.</b></span></p>
+
+			<a class="btn" href="quiero-pagar.php">BUSCAR DEUDAS ARGENPESOS <br> <span>A MI NOMBRE</span></a>
 
 		</div>
 		<div class="hidden-xs hidden-sm col-md-6 col-lg-6 text-center	 ">

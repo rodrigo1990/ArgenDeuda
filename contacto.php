@@ -17,7 +17,7 @@
 	<div class="container ">
 		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
 			<h2>COMPLETÁ TUS DATOS</h2>
-			<p><img src="img/img-icon.png" alt=""><span><b>PERSONALES</b></span></p>
+			<p><img src="img/img-icon.png" alt=""> <span><b>PARA MÁS INFORMACIÓN SOBRE TU CUENTA ARGENPAGOS</b></span></p>
 			<form action="">
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -34,7 +34,14 @@
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 						<label for="contacto">¿Cómo desea ser contactado?</label>
-						<input autocomplete="off" type="text" class="form-control" name="contacto" id="contacto-input" placeholder="Ej: Mail">
+                        <select name="contacto" id="contacto-input" class="form-control">
+                            <option value="0">Escoja un medio</option>
+                            <option value="SMS">SMS</option>
+                            <option value="LLamada">LLamada</option>
+                            <option value="Whatsapp">Whatsapp</option>
+                            <option value="Mail">Mail</option>
+                        </select>
+						<!--  <input autocomplete="off" type="text" class="form-control" name="contacto" id="contacto-input" placeholder="Ej: Mail">-->
 						<div class="error" id="contacto-error">Ingrese una fuente de contacto</div>
 					</div>
 				</div>
@@ -455,11 +462,11 @@
 
     });
 
-     $("#contacto-input").keyup(function(){
+     $("#contacto-input").change(function(){
 
-        var contacto = $("#contacto-input").val();
+        var contacto = $("#contacto-input option:selected").val();
 
-        if(contacto.length==0){
+        if(contacto==0){
 
   		$("#contacto-error").fadeIn();
   			contactoEstaValidado=false; 
