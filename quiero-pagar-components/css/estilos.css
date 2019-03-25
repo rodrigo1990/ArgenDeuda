@@ -202,9 +202,15 @@ p>span{
 
 .table{
 	 border-radius: 5px;
-    width: 80%;
+    width: 100%;
     margin: 0px auto;
     float: none;
+}
+
+.table td {
+    padding: 1px !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
 }
 
 .table thead{

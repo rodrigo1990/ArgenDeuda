@@ -69,23 +69,29 @@ if(isset($_POST['documento'])){
 
 		<p><span>al día de la fecha es:</span></p>
 
-
+		
 		
 
-		<table class="table text-center">
+		<table class="table table-responsive text-center">
 			<thead>
 				<th class="text-center">Nro. de Credito</th>
 				<th class="text-center">Nombre</th>
 				<th class="text-center">Fecha Primer Vto Pago</th>
+				<th class="text-center">Fecha Liquidacion</th>
 				<th class="text-center">Estado</th>
-				<th class="text-center">Cuotas Adeudadas</th>
+				<th class="text-center">Cuotas Vencidas</th>
+				<th class="text-center">Cuotas Pagadas</th>
+				<th class="text-center">Total Cuotas</th>
 				<th class="text-center">Saldo</th>
+				<th class="text-center">Saldo Cuota</th>
 				<th class="text-center">Detalle</th>
 			</thead>
 			<tbody>
 
 
 				<?php foreach($usuario->productos as $producto):?>
+
+					<?php// var_dump($producto) ?>
 					
 					<!-- setear clases de table row -->
 					<?php if($producto->estado=="Atrasada"): ?>
@@ -150,6 +156,8 @@ if(isset($_POST['documento'])){
 				
 						<td><?php echo date('d-m-Y',strtotime($producto->fechaMora)); ?></td>
 
+						<td><?php echo date('d-m-Y',strtotime($producto->fechaLiquidacion)); ?></td>
+
 
 
 						<td>
@@ -162,6 +170,10 @@ if(isset($_POST['documento'])){
 
 						<td><?php echo $producto->cuotasAdeudadas; ?></td>
 
+						<td><?php echo $producto->cuotasPagas; ?></td>
+
+						<td><?php echo $producto->totalCuotas; ?></td>
+
 
 						<?php if($producto->nombreEstudioAsignado=="ARGENCOBROS"): ?>
 						
@@ -172,6 +184,9 @@ if(isset($_POST['documento'])){
 							<td><?php echo "$ ".$producto->saldo.""; ?></td>
 
 						<?php endif; ?>
+
+
+						<td><?php echo "$ ".$producto->valorCuota.""; ?></td>
 
 
 
