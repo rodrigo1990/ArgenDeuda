@@ -64,11 +64,13 @@ require_once("Producto.php");
 							$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Saldo,
 							date("Y-m-d",strtotime($this->datos->ConsultaPorDocumentoResult->Productos->Producto->FechaMora)),
 							$this->datos->ConsultaPorDocumentoResult->Productos->Producto->CuotasAdeudadas,
+							$this->datos->ConsultaPorDocumentoResult->Productos->Producto->CuotasPagas,
 							$this->datos->ConsultaPorDocumentoResult->Productos->Producto->Status,
 							$this->datos->ConsultaPorDocumentoResult->Productos->Producto->EstudioAsignado,
 							$this->datos->ConsultaPorDocumentoResult->Productos->Producto->FechaLiquidacion,
 							$this->datos->ConsultaPorDocumentoResult->Productos->Producto->TotalCuotas,
-							$this->datos->ConsultaPorDocumentoResult->Productos->Producto->SaldoCuota
+							$this->datos->ConsultaPorDocumentoResult->Productos->Producto->SaldoCuota,
+							$this->datos->ConsultaPorDocumentoResult->Productos->Producto->ImporteCuota
 
 
 						));
@@ -87,11 +89,13 @@ require_once("Producto.php");
 									$productoService->Saldo,
 									date("Y-m-d",strtotime($productoService->FechaMora)),
 									$productoService->CuotasAdeudadas,
+									$productoService->CuotasPagas,
 									$productoService->Status,
 									$productoService->EstudioAsignado,
 									$productoService->FechaLiquidacion,
 									$productoService->TotalCuotas,
-									$productoService->SaldoCuota
+									$productoService->SaldoCuota,
+									$productoService->ImporteCuota
 								));
 						}
 

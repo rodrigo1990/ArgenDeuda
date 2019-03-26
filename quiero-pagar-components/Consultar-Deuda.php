@@ -16,7 +16,7 @@ if(isset($_POST['documento'])){
 
 		$usuario->obtenerProductosPorDocumento();
 
-		//var_dump($usuario);
+		var_dump($usuario);
 
 		$_SESSION['usuario'] = serialize($usuario);
 	}
@@ -71,19 +71,29 @@ if(isset($_POST['documento'])){
 
 		
 		
-
-		<table class="table table-responsive text-center">
+		<div class="table-responsive">
+		<table class="table  text-center">
 			<thead>
 				<th class="text-center">Nro. de Credito</th>
 				<th class="text-center">Nombre</th>
-				<th class="text-center">Fecha Primer Vto Pago</th>
+				
 				<th class="text-center">Fecha Liquidacion</th>
-				<th class="text-center">Estado</th>
-				<th class="text-center">Cuotas Vencidas</th>
-				<th class="text-center">Cuotas Pagadas</th>
+
 				<th class="text-center">Total Cuotas</th>
-				<th class="text-center">Saldo</th>
-				<th class="text-center">Saldo Cuota</th>
+				<th class="text-center">Cuotas Pagadas</th>
+
+				<th class="text-center">Estado</th>
+
+				<th class="text-center">1er Vto impago</th>
+
+				<th class="text-center">Cuotas Vencidas</th>
+				
+				
+				
+
+				<th class="text-center">Saldo Vencido</th>
+				<th class="text-center">Valor cuota</th>
+				<th class="text-center">Saldo Total</th>
 				<th class="text-center">Detalle</th>
 			</thead>
 			<tbody>
@@ -152,27 +162,30 @@ if(isset($_POST['documento'])){
 						<td><?php echo $producto->nombre; ?></td>
 
 
-
+						
 				
-						<td><?php echo date('d-m-Y',strtotime($producto->fechaMora)); ?></td>
 
 						<td><?php echo date('d-m-Y',strtotime($producto->fechaLiquidacion)); ?></td>
 
+						<td><?php echo $producto->totalCuotas; ?></td>
 
+						<td><?php echo $producto->cuotasPagas; ?></td>
 
 						<td>
 						  	<b class=<?php echo $color ?>><?php echo $producto->estado ?></b>
 								
 						</td>
 
-
+						<td><?php echo date('d-m-Y',strtotime($producto->fechaMora)); ?></td>
 
 
 						<td><?php echo $producto->cuotasAdeudadas; ?></td>
 
-						<td><?php echo $producto->cuotasPagas; ?></td>
+						
+						
+						
 
-						<td><?php echo $producto->totalCuotas; ?></td>
+						
 
 
 						<?php if($producto->nombreEstudioAsignado=="ARGENCOBROS"): ?>
@@ -181,14 +194,15 @@ if(isset($_POST['documento'])){
 
 						<?php else: ?>
 
-							<td><?php echo "$ ".$producto->saldo.""; ?></td>
+							<td><?php echo "$ ".number_format($producto->saldo,2, ',', '').""; ?></td>
 
 						<?php endif; ?>
 
 
-						<td><?php echo "$ ".$producto->valorCuota.""; ?></td>
+						<td><?php echo "$ ".number_format($producto->valorCuota,2, ',', '').""; ?></td>
 
-
+						
+						<td><?php echo "$".number_format($producto->saldoCuota,2, ',', ''); ?></td>
 
 
 						<?php if($paga==1): ?>
@@ -210,6 +224,8 @@ if(isset($_POST['documento'])){
 
 			</tbody>
 		</table>
+		</div>
+
 		
 		<!-- sino, mostramos la leyendra de no poseer creditors, y el numero telefono de argenpesos -->
 		<?php else: ?>

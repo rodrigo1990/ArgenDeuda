@@ -16,11 +16,12 @@ class Producto{
 	public $totalCuotas;
 	public $saldoCuota;
 	public $valorCuota;
+	
 
 
 
 
-	function __construct($numero,$nombre,$moneda,$saldo,$fechaMora,$cuotasAdeudadas,$estado,$idEstudioAsignado,$fechaLiquidacion,$totalCuotas,$saldoCuota){
+	function __construct($numero,$nombre,$moneda,$saldo,$fechaMora,$cuotasAdeudadas,$cuotasPagas,$estado,$idEstudioAsignado,$fechaLiquidacion,$totalCuotas,$saldoCuota,$valorCuota){
 
 
 		if($estado=="Previsionada" && $idEstudioAsignado==0){
@@ -39,13 +40,13 @@ class Producto{
 		$this->saldo=number_format((float)$saldo,2,'.','');
 		$this->fechaMora=$fechaMora;
 		$this->cuotasAdeudadas=$cuotasAdeudadas;
-		$this->cuotasPagas = $totalCuotas - $cuotasAdeudadas;
+		$this->cuotasPagas = $cuotasPagas;
 		$this->estado=$estado;
 		$this->idEstudioAsignado=$idEstudioAsignado;
 		$this->fechaLiquidacion=$fechaLiquidacion;
 		$this->totalCuotas = $totalCuotas;
 		$this->saldoCuota = $saldoCuota;
-		$this->valorCuota = ($this->saldoCuota /($this->totalCuotas - $this->cuotasPagas)); 
+		$this->valorCuota = $valorCuota; 
 
 		$this->construirAtributosDeEstudio();
 
