@@ -15,9 +15,9 @@
 
 
 	<div class="container ">
-		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
-			<h2>COMPLETÁ TUS DATOS</h2>
-			<p><img src="img/img-icon.png" alt=""> <span><b>PARA MÁS INFORMACIÓN SOBRE TU CUENTA ARGENPAGOS</b></span></p>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  ">
+			<h2 class="text-center">COMPLETÁ TUS DATOS</h2>
+			<p class="text-center"> <b>PARA MÁS INFORMACIÓN SOBRE TU CUENTA ARGENPAGOS</b></p>
 			<form action="">
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -56,6 +56,7 @@
 					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 						<label for="cod_area">Codigo de area</label>
 						<select placeholder="Ej:11" name="cod_area" id="cod_area" class="form-control">
+                             <option>Código de area</option>
 								 <option>11</option>
                 <option>220</option>
                 <option>221</option>
@@ -369,7 +370,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<label for="mensaje">Motivo de consulta</label>
-						<textarea  cols="30" rows="10" name="mensaje" id="mensaje" class="form-control"></textarea>
+						<textarea  cols="30" rows="10" name="mensaje" id="mensaje" class="form-control" placeholder= ""></textarea>
 						<div class="error" id="mensaje-error">Ingrese un motivo de consulta</div>
 					</div>
 				</div>
@@ -379,9 +380,7 @@
 			</form>
 			
 		</div>
-		<div class="hidden-xs hidden-sm col-md-6 col-lg-6 text-center img-cont ">
-			<img src="img/figura-contacto.png" alt="" width=95% class="img-lg">
-		</div>
+		
 
 		
 
@@ -407,7 +406,7 @@
 
 
 
-
+<?php include("inc/contacto.php") ?>
 <?php include("inc/footer.php") ?>
 <?php include("inc/scripts.php")?>
 <script>

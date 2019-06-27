@@ -13,10 +13,21 @@
 	    src: url(../../css/fonts/Ubuntu-B.ttf);
 	}
 
+	@font-face {
+	    font-family: GothamBook;
+	    src: url(../../css/fonts/GothamBook.otf);
+	}
 
+body{
+	background: #F5F5F6;
+}
 h1,h2,h4,h5{
-font-family: bebas-bold !important;
-letter-spacing: 2px;
+font-family: Gotham !important;
+}
+
+h2>span{
+	font-family: GothamBook !important;
+	font-size: 2.7rem;
 }
 
 h1{
@@ -25,7 +36,7 @@ h1{
 }
 
 h2{
-  font-size: 4.5rem;
+  font-size: 3rem;
   color:#1DA2DC;
 
 }
@@ -42,7 +53,7 @@ h5{
 }
 
 p{
-  font-family: ubuntu-regular !important;
+  font-family: GothamBook !important;
 }
 
 label{
@@ -56,6 +67,13 @@ p>span{
   color:#EB5938;
 }
 
+a{
+	 -webkit-transition: all 0.20s ease-in-out;
+    -moz-transition: all 0.20s ease-in-out;
+    -ms-transition: all 0.20s ease-in-out;
+    -o-transition: all 0.20s ease-in-out;
+    transition: all 0.20s ease-in-out;
+}
 
 .wsp-btn{
 	cursor:pointer;
@@ -87,6 +105,7 @@ p>span{
 		  text-align: center;
 		  width:30%;
 		  font-family: helvetica;
+		  background:transparent;
 		  transition:border-bottom 0.75s;
 		}
 
@@ -142,35 +161,25 @@ p>span{
 		}
 
 .btn{
-  background-color:#EB5938;
-  border-radius: 6px;
-  color:#FFF100;
-  padding:10px;
-  font-family: ubuntu-bold !important;
-  font-size:2rem;
-  box-shadow: -6px 7px #020302;
+       background-color: transparent;
+    border-radius: 25px;
+    color: #EE4E23;
+    padding: 10px 34px;
+    font-family: ubuntu-bold !important;
+    font-size: 2rem;
+    /* box-shadow: -6px 7px #020302; */
+    border: 2px solid #EE4E23;
 
 }
 
 
 .btn:hover{
-  /*box-shadow: -3px 4px #020302;*/
-  color:#FFF100;
-  padding:9px;
   background-color: #da4f2f;
-  /*margin: 5px 0 0 -5px;*/
-  transition:box-shadow 0.2s,background-color 0.2s,padding 0.2s,margin 0.2s; 
+  color:white;
 
 }
 
 
-.btn:active{
-  background-color: #c14e34;
-   box-shadow: -0px 0px #020302;
-  margin: 8px 0 0 -8px;
-  
-
-}
 
 
 .btn-second{
@@ -243,7 +252,9 @@ p>span{
 	color:red;
 }
 
-
+.orange{
+	color:#EE4E23;
+}
 .green{
 	color:green;
 }

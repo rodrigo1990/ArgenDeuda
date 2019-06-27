@@ -1,48 +1,56 @@
-<header>
-	<nav>
-		<div id="xsMenu" class="menuXs ">
-				<div class="header-xsMenu">
-					<i class="fa fa-close w3-large"  style="" id="cerrarMenu"></i>
-					<h4 style="">Inicio</h4>
-				</div>
-		 		<ul>
-	 			<li><a href="index.php">Home</a></li>
-		 		<li><a href="quienes-somos.php">¿Que es Argenpagos?</a></li>
-		 		<li><a href="preguntas-frecuentes.php">Preguntas Frecuentes</a></li>
-		 		<li><a href="quiero-pagar.php">Quiero Pagar</a></li>
-		 		<li><a href="contacto.php">Contacto</a></li>
-		 		
-			
-				</ul>
-		</div>
+<header id="menu-center" >
+			<div  class="row">
+				<div class="container-fluid">
+					<div class="col-lg-2 hidden-md hidden-sm hidden-xs ">
+						<a href="index" id="logo-btn" style="cursor:pointer">
+							<img src="img/logo.png" class="logo" src=></img> 
 
-		<div class="container-fluid menu">
-			<div class="row">
-				<div class="col-sm-9 col-xs-9 col-md-3 col-lg-3 logo-cont">
-					<a href="index.php"><img src="img/logo.png" class="img-responsive" alt=""></a>
+						</a>
+					</div>
+
+					<div class="col-lg-10 hidden-md hidden-sm hidden-xs btn-cont">
+						<ul id="nav" class="menu">
+							<li><a href="index.php"  class="fix spa-btn">QUIERO PAGAR</a></li>
+							<li><a href="quienes-somos.php"  class="after-btn"  >¿QUE ES ARGENPESOS?</a></li>
+							<li><a href="preguntas-frecuentes.php" class="spa-btn after-btn">PREGUNTAS FRECUENTES</a></li>
+
+							<li>
+								<a href="contacto.php"  id="quienes-somos-btn" class="after-btn">CONTÁCTO</a>
+							</li>
+
+							<li class="">
+								
+								<a href="" target="_blank" class="float-left rr-ss"><i class="fab fa-facebook-f"></i></a>
+
+
+								<a href="" target="_blank" class="float-left rr-ss"><i class="fab fa-instagram"></i></a>
+							</li>
+							
+						</ul>
+					</div>
+
 				</div>
-				<div class="hidden-xs hidden-sm col-md-9 col-lg-9">
-					<ul>
-						<li>
-							<a href="quienes-somos.php">¿QUE ES ARGENPAGOS?</a>
-						</li>
-						<li>
-							<a href="preguntas-frecuentes.php">PREGUNTAS FRECUENTES</a>
-						</li>
-						<li>
-							<a href="quiero-pagar.php">QUIERO PAGAR</a>
-						</li>
-						<li>
-							<a href="contacto.php">CONTACTO</a>
-						</li>
-					</ul>
-				</div>
-				<div class="hidden-lg hidden-md col-sm-3 col-xs-3 text-center " style="padding: 5%;">
-					<i class="fa fa-bars"  id="abrirMenu"></i>
-				</div>
+				<div class="hidden-lg col-md-12 col-sm-12 col-xs-12 text-center xs-row " style="">
+					<a href="index.php">
+						<img src="img/logo.png" class="logo" width=" 150px"></img>
+					</a>
+						<a id="abrirMenu">
+							<i class="fa fa-bars"  id="abrirMenu"></i>
+						</a>
+					</div>
 			</div>
-		</div>
+		</header>
+		<ul id="xsMenu" class="overlay-xs-menu menu">
+			<div class="row">
+				<a id="cerrarMenu"  class="close-menu-xs">
+					<i class="fas fa-times"></i>
+				</a>
+			</div>
+			<li><a href="index.php" class="xs-btn spa-btn">QUIERO PAGAR</a></li>
+			<li><a href="quienes-somos.php"  class="xs-btn" >¿QUE ES ARGENPESOS?</a></li>
+			<li><a href="preguntas-frecuentes.php" class="xs-btn spa-btn">PREGUNTAS FRECUENTES</a></li>
 
-	</nav>
-</header>
+			<li><a href="contacto.php" class="xs-btn spa-btn">CONTÁCTO</a></li>
 
+
+		</ul>
